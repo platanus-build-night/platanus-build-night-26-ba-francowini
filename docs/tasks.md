@@ -68,7 +68,7 @@
 
 **Goal**: Users can login with Google OAuth, view/edit their profile
 
-**Independent Test**: Navigate to /login, sign in with Google, see profile page with user info and $100M starting budget
+**Independent Test**: Navigate to /login, sign in with Google, see profile page with user info and $150M starting budget
 
 ### Implementation for User Story 1
 
@@ -81,7 +81,7 @@
 - [ ] T025 [P] [US1] Create user profile page showing name, email, virtual budget, real balance, and account creation date in src/app/(dashboard)/profile/page.tsx
 - [ ] T026 [US1] Create user profile API route (GET current user, PATCH update name/email) in src/app/api/user/route.ts
 
-**Checkpoint**: User can login with Google, see navigation, view profile with $100M budget
+**Checkpoint**: User can login with Google, see navigation, view profile with $150M budget
 
 ---
 
@@ -89,7 +89,7 @@
 
 **Goal**: Users can browse the player catalog, pick a formation, build an 18-player squad (11 starters + 7 bench) within budget, and designate captain + captain substitute
 
-**Independent Test**: Login, navigate to /squad, browse players by position/team, select 4-3-3 formation, add 18 players within $100M budget, set captain, see squad on pitch visualization
+**Independent Test**: Login, navigate to /squad, browse players by position/team, select 4-3-3 formation, add 18 players within $150M budget, set captain, see squad on pitch visualization
 
 ### Implementation for User Story 2
 
@@ -98,13 +98,13 @@
 - [ ] T029 [P] [US2] Create formation selector component with visual preview of each formation in src/components/squad/formation-selector.tsx
 - [ ] T030 [P] [US2] Create pitch visualization component showing 11 starters positioned on a football pitch according to formation in src/components/squad/pitch-view.tsx
 - [ ] T031 [P] [US2] Create bench list component showing 7 bench players with 0.5x indicator in src/components/squad/bench-list.tsx
-- [ ] T032 [P] [US2] Create budget bar component showing remaining budget out of $100M in src/components/squad/budget-bar.tsx
+- [ ] T032 [P] [US2] Create budget bar component showing remaining budget out of $150M in src/components/squad/budget-bar.tsx
 - [ ] T033 [US2] Create squad service with buildSquad, validateFormation, calculateBudget, setCaptain, getSquadByUser methods in src/services/squad.service.ts
 - [ ] T034 [US2] Create players API route (GET with search, position, team query params, pagination) in src/app/api/players/route.ts
 - [ ] T035 [US2] Create squad API routes (GET current squad, POST create squad, PUT update squad, PUT set formation) in src/app/api/squad/route.ts
 - [ ] T036 [US2] Create squad player API routes (POST add player, DELETE remove player, PATCH set captain/captainSub/starter) in src/app/api/squad/players/route.ts
 - [ ] T037 [US2] Create squad builder page composing catalog, formation selector, pitch view, bench list, and budget bar in src/app/(dashboard)/squad/page.tsx
-- [ ] T038 [US2] Add strict squad validation logic to squad.service.ts: enforce formation slot counts per position, budget cap ($100M), max 18 players, exactly 1 captain, exactly 1 captain sub, no duplicate players. This extends T033's stubs with full validation rules
+- [ ] T038 [US2] Add strict squad validation logic to squad.service.ts: enforce formation slot counts per position, budget cap ($150M), max 18 players, exactly 1 captain, exactly 1 captain sub, no duplicate players. This extends T033's stubs with full validation rules
 
 **Checkpoint**: User can build a complete, valid squad with formation, captain, and budget management
 
@@ -187,8 +187,10 @@
 - [ ] T090 [P] [US6] Create virtual budget purchase service with tiered pricing ($5M = $1,000 ARS, $10M = $1,800 ARS, $20M = $3,000 ARS), MP payment link generation, and budget credit after webhook confirmation in src/services/budget-purchase.service.ts
 - [ ] T091 [US6] Create budget purchase API route (GET available tiers, POST create purchase with MP payment link) in src/app/api/wallet/budget/route.ts
 - [ ] T092 [P] [US6] Create budget purchase UI component showing tier options with prices and buy buttons in src/components/wallet/budget-purchase.tsx
+- [ ] T093 [US6] Implement 3% service fee logic on wallet load and budget purchase transactions: apply fee to payment amount, skip fee when user balance ≥ $20,000 ARS, display fee breakdown in UI before confirming payment in src/services/wallet.service.ts and src/services/budget-purchase.service.ts
+- [ ] T094 [P] [US8] Create AI unlock purchase flow: $500 ARS one-time payment via MP Checkout Pro, set user.aiUnlocked flag on webhook confirmation, gate AI handler behind flag in src/services/bot/ai-unlock.service.ts and update T089 paywall check to use persisted flag
 
-**Checkpoint**: User can load balance via MP, purchase additional virtual budget, see transactions, service fee waiver at $20k+
+**Checkpoint**: User can load balance via MP, purchase additional virtual budget, see transactions, service fee 3% (waived at $20k+), unlock AI features for $500 ARS
 
 ---
 
@@ -402,7 +404,7 @@ With multiple Claude Code instances (via `hack` command):
 - Always work in worktrees, never on main (Constitution Principle V)
 - Desktop-first layout — WhatsApp covers mobile experience (MVP.md §8)
 - Mock data: 4 teams, ~80 players, 2 simulated matchdays (MVP.md §10)
-- Player values: $1M–$15M, starting budget $100M (MVP.md §1)
+- Player values: $1M–$15M, starting budget $150M — avg $8.3M/player, forces squad-building trade-offs (MVP.md §1)
 - Auth: Google OAuth only for MVP (MVP.md §9) — phone/OTP deferred to post-MVP
 - Platform rake: 5% deducted from league pool before prize distribution (MVP.md §2)
 - Virtual budget purchase: $5M=$1k ARS, $10M=$1.8k ARS, $20M=$3k ARS (MVP.md §3)

@@ -1,0 +1,271 @@
+{
+  "get": "players/squads",
+  "parameters": {
+    "team": "1065"
+  },
+  "errors": [],
+  "results": 1,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "team": {
+        "id": 1065,
+        "name": "Central Cordoba de Santiago",
+        "logo": "https://media.api-sports.io/football/teams/1065.png"
+      },
+      "players": [
+        {
+          "id": 6330,
+          "name": "A. Aguerre",
+          "age": 35,
+          "number": 1,
+          "position": "Goalkeeper",
+          "photo": "https://media.api-sports.io/football/players/6330.png"
+        },
+        {
+          "id": 349487,
+          "name": "L. Bursich",
+          "age": 23,
+          "number": 23,
+          "position": "Goalkeeper",
+          "photo": "https://media.api-sports.io/football/players/349487.png"
+        },
+        {
+          "id": 426313,
+          "name": "J. Vallejos",
+          "age": 22,
+          "number": 25,
+          "position": "Goalkeeper",
+          "photo": "https://media.api-sports.io/football/players/426313.png"
+        },
+        {
+          "id": 433517,
+          "name": "Lucas Bernabéu",
+          "age": 21,
+          "number": 44,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/433517.png"
+        },
+        {
+          "id": 444702,
+          "name": "Y. Casermeiro",
+          "age": 23,
+          "number": 17,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/444702.png"
+        },
+        {
+          "id": 466147,
+          "name": "G. Vittar",
+          "age": 21,
+          "number": 31,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/466147.png"
+        },
+        {
+          "id": 289436,
+          "name": "J. Gómez",
+          "age": 25,
+          "number": 13,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/289436.png"
+        },
+        {
+          "id": 5810,
+          "name": "A. Maciel",
+          "age": 28,
+          "number": 2,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/5810.png"
+        },
+        {
+          "id": 290806,
+          "name": "F. Mansilla",
+          "age": 26,
+          "number": 6,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/290806.png"
+        },
+        {
+          "id": 5199,
+          "name": "L. Marchi",
+          "age": 29,
+          "number": 3,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/5199.png"
+        },
+        {
+          "id": 309827,
+          "name": "F. Martínez",
+          "age": 25,
+          "number": 20,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/309827.png"
+        },
+        {
+          "id": 5796,
+          "name": "S. Moyano",
+          "age": 28,
+          "number": 33,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/5796.png"
+        },
+        {
+          "id": 353506,
+          "name": "J. Pignani",
+          "age": 24,
+          "number": 42,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/353506.png"
+        },
+        {
+          "id": 5908,
+          "name": "I. Pillud",
+          "age": 39,
+          "number": 4,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/5908.png"
+        },
+        {
+          "id": 414153,
+          "name": "A. Quiroga",
+          "age": 23,
+          "number": 23,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/414153.png"
+        },
+        {
+          "id": 313063,
+          "name": "T. Cravero",
+          "age": 30,
+          "number": 5,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/313063.png"
+        },
+        {
+          "id": 47260,
+          "name": "S. Cristóforo",
+          "age": 32,
+          "number": 15,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/47260.png"
+        },
+        {
+          "id": 126671,
+          "name": "L. González",
+          "age": 25,
+          "number": 18,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/126671.png"
+        },
+        {
+          "id": 59201,
+          "name": "M. Iacobellis",
+          "age": 26,
+          "number": 10,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/59201.png"
+        },
+        {
+          "id": 6238,
+          "name": "F. Juárez",
+          "age": 27,
+          "number": 8,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/6238.png"
+        },
+        {
+          "id": 577350,
+          "name": "A. Laprida",
+          "age": 21,
+          "number": 37,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/577350.png"
+        },
+        {
+          "id": 560339,
+          "name": "F. Rodriguez",
+          "age": null,
+          "number": 30,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/560339.png"
+        },
+        {
+          "id": 560465,
+          "name": "A. Romero",
+          "age": 19,
+          "number": 24,
+          "position": "Defender",
+          "photo": "https://media.api-sports.io/football/players/560465.png"
+        },
+        {
+          "id": 51094,
+          "name": "M. Vera",
+          "age": 30,
+          "number": 22,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/51094.png"
+        },
+        {
+          "id": 405310,
+          "name": "D. Barrera",
+          "age": 21,
+          "number": 7,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/405310.png"
+        },
+        {
+          "id": 634731,
+          "name": "Joaquin Flores",
+          "age": 20,
+          "number": 29,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/634731.png"
+        },
+        {
+          "id": 506478,
+          "name": "B. Gerez",
+          "age": 18,
+          "number": 39,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/506478.png"
+        },
+        {
+          "id": 322308,
+          "name": "E. Naya",
+          "age": 24,
+          "number": 19,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/322308.png"
+        },
+        {
+          "id": 47424,
+          "name": "M. Santos",
+          "age": 32,
+          "number": 27,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/47424.png"
+        },
+        {
+          "id": 6452,
+          "name": "H. Tijanovich",
+          "age": 29,
+          "number": 11,
+          "position": "Midfielder",
+          "photo": "https://media.api-sports.io/football/players/6452.png"
+        },
+        {
+          "id": 237207,
+          "name": "L. Varaldo",
+          "age": 23,
+          "number": 9,
+          "position": "Attacker",
+          "photo": "https://media.api-sports.io/football/players/237207.png"
+        }
+      ]
+    }
+  ]
+}

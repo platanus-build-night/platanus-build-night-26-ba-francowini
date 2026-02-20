@@ -22,7 +22,7 @@ Fantasy football platform for Argentine football. Users build a squad, earn poin
 - Each user has a **virtual budget** to build their squad.
 - Each real player has a **market value** (price).
 - Users must build their 18-player squad within the budget cap.
-- **Starting budget: $100M** (virtual currency, no relation to real money).
+- **Starting budget: $150M** (virtual currency, no relation to real money).
 - **Player values range: $1M–$15M** depending on quality/stats.
 - Users can **purchase additional budget with real money** via Mercado Pago.
 - Player values may fluctuate between matchdays based on performance (post-MVP refinement).
@@ -115,21 +115,21 @@ Fantasy football platform for Argentine football. Users build a squad, earn poin
 | View leaderboard | Yes |
 | Bench players score at 0.5x | Yes |
 | Basic matchday results via WhatsApp | Yes |
-| AI features | **No** |
+| AI features | **No** (unlock for $500 ARS one-time) |
 
 ### Paid / Microtransactions
 | Feature | Payment model |
 |---|---|
 | Bench→starter substitution (promote to 1x) | Per-sub fee |
 | Additional squad budget | Direct purchase via MP ($5M virtual = $1,000 ARS, $10M = $1,800 ARS, $20M = $3,000 ARS) |
-| AI assistant (injury alerts, recommendations) | Pay to unlock |
+| AI assistant (injury alerts, recommendations) | $500 ARS one-time unlock via MP |
 | Private league creation | Minimum buy-in |
-| Service fee waiver | Load $20,000+ ARS → fee waived, balance usable for bets |
+| Service fee waiver | Load $20,000+ ARS → 3% fee waived, balance usable for bets |
 
 ### Monetization levers
-- **Service fee** on transactions (waived at $20,000+ balance).
+- **Service fee**: **3%** on wallet load and budget purchase transactions (waived when user balance ≥ $20,000 ARS).
 - **Microtransactions** for swaps and premium features.
-- **Rake on private leagues** (small % of buy-in pool).
+- **Rake on private leagues**: 5% of buy-in pool.
 
 ---
 
@@ -214,14 +214,14 @@ Fantasy football platform for Argentine football. Users build a squad, earn poin
 
 ## 8. Web App — Key Screens
 
-1. **Landing / Login** — Sign up with phone number (WhatsApp identity).
+1. **Landing / Login** — Sign in with Google OAuth.
 2. **Squad Builder** — Pick 11 starters + 7 bench from player catalog.
 3. **Matchday View** — Live scores, your squad's points, match status.
 4. **Leaderboard** — General ranking + private league rankings.
 5. **Transfers / Swaps** — Replace players who didn't play (with cost).
 6. **Private Leagues** — Create/join leagues with buy-in.
 7. **Wallet / Balance** — View balance, load funds, transaction history.
-8. **Profile** — User info, linked WhatsApp number.
+8. **Profile** — User info, Google account details.
 
 **Desktop-first** — WhatsApp covers the mobile experience.
 
@@ -262,7 +262,7 @@ For the hackathon presentation, we need:
 - Q: How do users initially build their squad? → A: Free pick from catalog, constrained by a chosen formation (e.g., 4-3-3). Users can also purchase additional budget with real money.
 - Q: What can users change in their squad between/during matchdays? → A: During matchday (LOCK onwards), squad is frozen — only bench→starter substitutions for non-playing starters. During OPEN phase, free transfers within budget.
 - Q: How many free substitutions per matchday? → A: Zero — all substitutions are paid. Bench always scores at 0.5x. Paid sub promotes bench→starter (1x) only if both matches haven't started.
-- Q: What is the starting budget and player value range? → A: $100M virtual budget, players valued $1M–$15M.
+- Q: What is the starting budget and player value range? → A: $150M virtual budget, players valued $1M–$15M.
 - Q: How are fantasy points calculated? → A: No custom scoring engine — use an external API that provides direct player ratings per match. Platform consumes scores as-is.
 - Q: When selling a player, does the user recover full value? → A: No — 10% sell tax. User recovers 90% of current market value.
 - Q: Is there a captain mechanic? → A: Yes — Captain (2x) + Captain Substitute (inherits 2x if captain didn't play). No vice-captain bonus.

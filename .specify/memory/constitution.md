@@ -101,7 +101,7 @@ No secrets, keys, or credentials MUST ever be committed to the repository.
 - Payment flows (Mercado Pago) MUST use sandbox credentials during
   development. Production keys MUST only exist in deployment environment
   variables.
-- User phone numbers and personal data MUST be treated as sensitive and
+- User email addresses and personal data MUST be treated as sensitive and
   never logged in plain text.
 
 **Rationale**: This app handles real money (Mercado Pago) and personal data

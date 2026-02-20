@@ -1,0 +1,1915 @@
+{
+  "get": "players/topyellowcards",
+  "parameters": {
+    "league": "128",
+    "season": "2024"
+  },
+  "errors": [],
+  "results": 20,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "player": {
+        "id": 70590,
+        "name": "R. Fernández",
+        "firstname": "Rodrigo",
+        "lastname": "Fernández Cedrés",
+        "age": 29,
+        "birth": {
+          "date": "1996-01-03",
+          "place": "Montevideo",
+          "country": "Uruguay"
+        },
+        "nationality": "Uruguay",
+        "height": "172",
+        "weight": "74",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/70590.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 457,
+            "name": "Newells Old Boys",
+            "logo": "https://media.api-sports.io/football/teams/457.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 28,
+            "lineups": 28,
+            "minutes": 2371,
+            "number": null,
+            "position": "Midfielder",
+            "rating": "6.917857",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 12,
+            "on": 2
+          },
+          "goals": {
+            "total": null,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1227,
+            "key": 16,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 88,
+            "blocks": 10,
+            "interceptions": 33
+          },
+          "duels": {
+            "total": 330,
+            "won": 165
+          },
+          "dribbles": {
+            "attempts": 46,
+            "success": 23,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 20,
+            "committed": 52
+          },
+          "cards": {
+            "yellow": 18,
+            "yellowred": null,
+            "red": 2
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 358381,
+        "name": "N. Paz",
+        "firstname": "Nicolás Andrés",
+        "lastname": "Paz",
+        "age": 23,
+        "birth": {
+          "date": "2002-10-16",
+          "place": "Santiago del Estero",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": null,
+        "weight": null,
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/358381.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 441,
+            "name": "Union Santa Fe",
+            "logo": "https://media.api-sports.io/football/teams/441.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 32,
+            "lineups": 29,
+            "minutes": 2364,
+            "number": null,
+            "position": "Defender",
+            "rating": "6.781250",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 3,
+            "out": 10,
+            "bench": 8
+          },
+          "shots": {
+            "total": 5,
+            "on": null
+          },
+          "goals": {
+            "total": 0,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 952,
+            "key": 3,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 47,
+            "blocks": 17,
+            "interceptions": 32
+          },
+          "duels": {
+            "total": 180,
+            "won": 98
+          },
+          "dribbles": {
+            "attempts": 14,
+            "success": 9,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 13,
+            "committed": 28
+          },
+          "cards": {
+            "yellow": 15,
+            "yellowred": 1,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 5916,
+        "name": "G. Fernández",
+        "firstname": "Guillermo Matías",
+        "lastname": "Fernández",
+        "age": 34,
+        "birth": {
+          "date": "1991-10-11",
+          "place": "Granadero Baigorria",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "180",
+        "weight": "74",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/5916.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 451,
+            "name": "Boca Juniors",
+            "logo": "https://media.api-sports.io/football/teams/451.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 33,
+            "lineups": 27,
+            "minutes": 2507,
+            "number": null,
+            "position": "Midfielder",
+            "rating": "6.953125",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 6,
+            "out": 14,
+            "bench": 8
+          },
+          "shots": {
+            "total": 2,
+            "on": null
+          },
+          "goals": {
+            "total": 0,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1505,
+            "key": 20,
+            "accuracy": 40
+          },
+          "tackles": {
+            "total": 68,
+            "blocks": 7,
+            "interceptions": 40
+          },
+          "duels": {
+            "total": 244,
+            "won": 134
+          },
+          "dribbles": {
+            "attempts": 36,
+            "success": 20,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 31,
+            "committed": 44
+          },
+          "cards": {
+            "yellow": 15,
+            "yellowred": 0,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 6053,
+        "name": "A. Bouzat",
+        "firstname": "Agustín",
+        "lastname": "Bouzat",
+        "age": 31,
+        "birth": {
+          "date": "1994-03-28",
+          "place": "Bahía Blanca",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "173",
+        "weight": "73",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/6053.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 438,
+            "name": "Velez Sarsfield",
+            "logo": "https://media.api-sports.io/football/teams/438.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 40,
+            "lineups": 36,
+            "minutes": 3156,
+            "number": null,
+            "position": "Midfielder",
+            "rating": "6.884615",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 4,
+            "out": 13,
+            "bench": 4
+          },
+          "shots": {
+            "total": 15,
+            "on": 5
+          },
+          "goals": {
+            "total": 0,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1466,
+            "key": 22,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 111,
+            "blocks": 11,
+            "interceptions": 61
+          },
+          "duels": {
+            "total": 444,
+            "won": 216
+          },
+          "dribbles": {
+            "attempts": 47,
+            "success": 22,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 49,
+            "committed": 79
+          },
+          "cards": {
+            "yellow": 15,
+            "yellowred": 0,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 26305,
+        "name": "S. Ascacíbar",
+        "firstname": "Santiago Lionel",
+        "lastname": "Ascacíbar",
+        "age": 28,
+        "birth": {
+          "date": "1997-02-25",
+          "place": "La Plata",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "168",
+        "weight": "70",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/26305.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 450,
+            "name": "Estudiantes L.P.",
+            "logo": "https://media.api-sports.io/football/teams/450.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 38,
+            "lineups": 38,
+            "minutes": 3332,
+            "number": null,
+            "position": "Midfielder",
+            "rating": "7.216666",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": 4,
+            "bench": 1
+          },
+          "shots": {
+            "total": 45,
+            "on": 18
+          },
+          "goals": {
+            "total": 5,
+            "conceded": 0,
+            "assists": 1,
+            "saves": null
+          },
+          "passes": {
+            "total": 1886,
+            "key": 35,
+            "accuracy": 44
+          },
+          "tackles": {
+            "total": 122,
+            "blocks": 9,
+            "interceptions": 43
+          },
+          "duels": {
+            "total": 460,
+            "won": 254
+          },
+          "dribbles": {
+            "attempts": 32,
+            "success": 16,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 48,
+            "committed": 60
+          },
+          "cards": {
+            "yellow": 14,
+            "yellowred": 1,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 5641,
+        "name": "Á. Martino",
+        "firstname": "Ángelo",
+        "lastname": "Martino",
+        "age": 27,
+        "birth": {
+          "date": "1998-06-05",
+          "place": "Rafaela",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "178",
+        "weight": "72",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/5641.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 457,
+            "name": "Newells Old Boys",
+            "logo": "https://media.api-sports.io/football/teams/457.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 34,
+            "lineups": 31,
+            "minutes": 2667,
+            "number": null,
+            "position": "Defender",
+            "rating": "6.852941",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 3,
+            "out": 9,
+            "bench": 4
+          },
+          "shots": {
+            "total": 21,
+            "on": 8
+          },
+          "goals": {
+            "total": 0,
+            "conceded": 0,
+            "assists": 4,
+            "saves": null
+          },
+          "passes": {
+            "total": 1021,
+            "key": 24,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 60,
+            "blocks": 2,
+            "interceptions": 45
+          },
+          "duels": {
+            "total": 330,
+            "won": 169
+          },
+          "dribbles": {
+            "attempts": 54,
+            "success": 23,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 37,
+            "committed": 41
+          },
+          "cards": {
+            "yellow": 14,
+            "yellowred": 0,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 59200,
+        "name": "M. Céliz",
+        "firstname": "Milton Aaron",
+        "lastname": "Céliz",
+        "age": 33,
+        "birth": {
+          "date": "1992-07-25",
+          "place": "Laferrere",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "181",
+        "weight": "70",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/59200.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 476,
+            "name": "Deportivo Riestra",
+            "logo": "https://media.api-sports.io/football/teams/476.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 35,
+            "lineups": 35,
+            "minutes": 2852,
+            "number": null,
+            "position": "Attacker",
+            "rating": "6.720000",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 29,
+            "on": 10
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 770,
+            "key": 24,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 77,
+            "blocks": 11,
+            "interceptions": 31
+          },
+          "duels": {
+            "total": 438,
+            "won": 211
+          },
+          "dribbles": {
+            "attempts": 53,
+            "success": 29,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 56,
+            "committed": 64
+          },
+          "cards": {
+            "yellow": 13,
+            "yellowred": null,
+            "red": 2
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 1,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 289472,
+        "name": "G. Benedetti",
+        "firstname": "Gastón",
+        "lastname": "Benedetti Taffarel",
+        "age": 24,
+        "birth": {
+          "date": "2001-03-29",
+          "place": "Larroque",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "175",
+        "weight": "66",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/289472.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 450,
+            "name": "Estudiantes L.P.",
+            "logo": "https://media.api-sports.io/football/teams/450.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 34,
+            "lineups": 26,
+            "minutes": 2402,
+            "number": null,
+            "position": "Defender",
+            "rating": "6.868750",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 8,
+            "out": 8,
+            "bench": 12
+          },
+          "shots": {
+            "total": 11,
+            "on": 6
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1089,
+            "key": 17,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 51,
+            "blocks": 5,
+            "interceptions": 27
+          },
+          "duels": {
+            "total": 224,
+            "won": 108
+          },
+          "dribbles": {
+            "attempts": 45,
+            "success": 25,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 11,
+            "committed": 38
+          },
+          "cards": {
+            "yellow": 13,
+            "yellowred": 0,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 169980,
+        "name": "L. Arce",
+        "firstname": "Ismael Lucas Ariel",
+        "lastname": "Arce",
+        "age": 28,
+        "birth": {
+          "date": "1997-08-14",
+          "place": "Buenos Aires",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "172",
+        "weight": "69",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/169980.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 439,
+            "name": "Godoy Cruz",
+            "logo": "https://media.api-sports.io/football/teams/439.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 39,
+            "lineups": 35,
+            "minutes": 3040,
+            "number": null,
+            "position": "Defender",
+            "rating": "6.963157",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 4,
+            "out": 11,
+            "bench": 5
+          },
+          "shots": {
+            "total": 13,
+            "on": 3
+          },
+          "goals": {
+            "total": 0,
+            "conceded": 0,
+            "assists": 3,
+            "saves": null
+          },
+          "passes": {
+            "total": 1356,
+            "key": 34,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 71,
+            "blocks": 7,
+            "interceptions": 33
+          },
+          "duels": {
+            "total": 268,
+            "won": 125
+          },
+          "dribbles": {
+            "attempts": 35,
+            "success": 15,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 16,
+            "committed": 41
+          },
+          "cards": {
+            "yellow": 13,
+            "yellowred": 0,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 6051,
+        "name": "J. Laso",
+        "firstname": "Joaquín Marcelo",
+        "lastname": "Laso",
+        "age": 35,
+        "birth": {
+          "date": "1990-07-04",
+          "place": "Buenos Aires",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "185",
+        "weight": "80",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/6051.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 453,
+            "name": "Independiente",
+            "logo": "https://media.api-sports.io/football/teams/453.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 36,
+            "lineups": 36,
+            "minutes": 3151,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.119444",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 18,
+            "on": 8
+          },
+          "goals": {
+            "total": 2,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1704,
+            "key": 8,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 44,
+            "blocks": 19,
+            "interceptions": 51
+          },
+          "duels": {
+            "total": 264,
+            "won": 140
+          },
+          "dribbles": {
+            "attempts": 2,
+            "success": 2,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 17,
+            "committed": 36
+          },
+          "cards": {
+            "yellow": 13,
+            "yellowred": null,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 51599,
+        "name": "C. Lema",
+        "firstname": "Cristian Franco",
+        "lastname": "Lema",
+        "age": 35,
+        "birth": {
+          "date": "1990-03-24",
+          "place": "Puerto Madryn",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "191",
+        "weight": "81",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/51599.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 451,
+            "name": "Boca Juniors",
+            "logo": "https://media.api-sports.io/football/teams/451.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 25,
+            "lineups": 24,
+            "minutes": 2135,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.162500",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 1,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 19,
+            "on": 6
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1267,
+            "key": 5,
+            "accuracy": 42
+          },
+          "tackles": {
+            "total": 51,
+            "blocks": 8,
+            "interceptions": 41
+          },
+          "duels": {
+            "total": 269,
+            "won": 177
+          },
+          "dribbles": {
+            "attempts": 11,
+            "success": 8,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 18,
+            "committed": 33
+          },
+          "cards": {
+            "yellow": 12,
+            "yellowred": null,
+            "red": 2
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 2474,
+        "name": "I. Marcone",
+        "firstname": "Iván José",
+        "lastname": "Marcone",
+        "age": 35,
+        "birth": {
+          "date": "1990-06-03",
+          "place": "Buenos Aires",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "184",
+        "weight": "90",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/2474.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 453,
+            "name": "Independiente",
+            "logo": "https://media.api-sports.io/football/teams/453.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 35,
+            "lineups": 35,
+            "minutes": 3082,
+            "number": null,
+            "position": "Midfielder",
+            "rating": "7.057142",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 8,
+            "on": 2
+          },
+          "goals": {
+            "total": null,
+            "conceded": 0,
+            "assists": 1,
+            "saves": null
+          },
+          "passes": {
+            "total": 1616,
+            "key": 12,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 85,
+            "blocks": 6,
+            "interceptions": 53
+          },
+          "duels": {
+            "total": 314,
+            "won": 192
+          },
+          "dribbles": {
+            "attempts": 39,
+            "success": 28,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 48,
+            "committed": 28
+          },
+          "cards": {
+            "yellow": 12,
+            "yellowred": null,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 355004,
+        "name": "V. Gómez",
+        "firstname": "Diego Valentín",
+        "lastname": "Gómez",
+        "age": 22,
+        "birth": {
+          "date": "2003-06-26",
+          "place": "San Miguel",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "180",
+        "weight": "76",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/355004.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 438,
+            "name": "Velez Sarsfield",
+            "logo": "https://media.api-sports.io/football/teams/438.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 37,
+            "lineups": 36,
+            "minutes": 3207,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.136111",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 1,
+            "out": 3,
+            "bench": 1
+          },
+          "shots": {
+            "total": 13,
+            "on": 4
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1598,
+            "key": 4,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 54,
+            "blocks": 34,
+            "interceptions": 53
+          },
+          "duels": {
+            "total": 298,
+            "won": 187
+          },
+          "dribbles": {
+            "attempts": 12,
+            "success": 8,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 23,
+            "committed": 21
+          },
+          "cards": {
+            "yellow": 12,
+            "yellowred": 0,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 5822,
+        "name": "L. Morales",
+        "firstname": "Sandro Leonardo",
+        "lastname": "Morales",
+        "age": 34,
+        "birth": {
+          "date": "1991-04-11",
+          "place": "Villa Urquiza",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "180",
+        "weight": "72",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/5822.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 434,
+            "name": "Gimnasia L.P.",
+            "logo": "https://media.api-sports.io/football/teams/434.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 34,
+            "lineups": 34,
+            "minutes": 2943,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.012121",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": 4,
+            "bench": 2
+          },
+          "shots": {
+            "total": 8,
+            "on": 1
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 1,
+            "saves": null
+          },
+          "passes": {
+            "total": 1103,
+            "key": 6,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 52,
+            "blocks": 27,
+            "interceptions": 54
+          },
+          "duels": {
+            "total": 271,
+            "won": 156
+          },
+          "dribbles": {
+            "attempts": 11,
+            "success": 9,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 14,
+            "committed": 31
+          },
+          "cards": {
+            "yellow": 12,
+            "yellowred": 0,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 74973,
+        "name": "L. Carrizo",
+        "firstname": "Lucas Eduardo",
+        "lastname": "Carrizo",
+        "age": 28,
+        "birth": {
+          "date": "1997-05-20",
+          "place": "San Miguel de Tucumán",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "180",
+        "weight": "71",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/74973.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 445,
+            "name": "Huracan",
+            "logo": "https://media.api-sports.io/football/teams/445.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 30,
+            "lineups": 30,
+            "minutes": 2650,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.156666",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": 1,
+            "bench": 1
+          },
+          "shots": {
+            "total": 17,
+            "on": 7
+          },
+          "goals": {
+            "total": 2,
+            "conceded": 0,
+            "assists": 1,
+            "saves": null
+          },
+          "passes": {
+            "total": 1525,
+            "key": 13,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 77,
+            "blocks": 16,
+            "interceptions": 44
+          },
+          "duels": {
+            "total": 288,
+            "won": 168
+          },
+          "dribbles": {
+            "attempts": 15,
+            "success": 9,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 36,
+            "committed": 29
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": 1,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 6107,
+        "name": "C. Corvalán",
+        "firstname": "Claudio Gastón",
+        "lastname": "Corvalán",
+        "age": 36,
+        "birth": {
+          "date": "1989-03-23",
+          "place": "Santa Isabel",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "180",
+        "weight": "80",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/6107.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 441,
+            "name": "Union Santa Fe",
+            "logo": "https://media.api-sports.io/football/teams/441.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 36,
+            "lineups": 36,
+            "minutes": 3207,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.051428",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": 2,
+            "bench": 1
+          },
+          "shots": {
+            "total": 30,
+            "on": 7
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 1,
+            "saves": null
+          },
+          "passes": {
+            "total": 1590,
+            "key": 18,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 66,
+            "blocks": 11,
+            "interceptions": 60
+          },
+          "duels": {
+            "total": 278,
+            "won": 173
+          },
+          "dribbles": {
+            "attempts": 15,
+            "success": 7,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 26,
+            "committed": 27
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": 0,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 70749,
+        "name": "A. Martínez",
+        "firstname": "Adrián Emmanuel",
+        "lastname": "Martínez",
+        "age": 33,
+        "birth": {
+          "date": "1992-07-07",
+          "place": null,
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": null,
+        "weight": null,
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/70749.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 436,
+            "name": "Racing Club",
+            "logo": "https://media.api-sports.io/football/teams/436.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 34,
+            "lineups": 30,
+            "minutes": 2568,
+            "number": null,
+            "position": "Attacker",
+            "rating": "7.157575",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 4,
+            "out": 14,
+            "bench": 5
+          },
+          "shots": {
+            "total": 71,
+            "on": 33
+          },
+          "goals": {
+            "total": 19,
+            "conceded": 0,
+            "assists": 4,
+            "saves": null
+          },
+          "passes": {
+            "total": 417,
+            "key": 28,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 17,
+            "blocks": null,
+            "interceptions": 8
+          },
+          "duels": {
+            "total": 250,
+            "won": 81
+          },
+          "dribbles": {
+            "attempts": 21,
+            "success": 8,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 23,
+            "committed": 48
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": 0,
+            "red": 1
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 2,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 59338,
+        "name": "J. Goitía",
+        "firstname": "Jonatan Esteban",
+        "lastname": "Goitía",
+        "age": 31,
+        "birth": {
+          "date": "1994-08-02",
+          "place": "Mariano Moreno",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": null,
+        "weight": null,
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/59338.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 476,
+            "name": "Deportivo Riestra",
+            "logo": "https://media.api-sports.io/football/teams/476.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 40,
+            "lineups": 32,
+            "minutes": 2527,
+            "number": null,
+            "position": "Defender",
+            "rating": "6.692307",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 8,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 26,
+            "on": 3
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 559,
+            "key": 16,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 91,
+            "blocks": 6,
+            "interceptions": 31
+          },
+          "duels": {
+            "total": 285,
+            "won": 148
+          },
+          "dribbles": {
+            "attempts": 24,
+            "success": 10,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 21,
+            "committed": 53
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": null,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 127420,
+        "name": "J. Romaña",
+        "firstname": "Jhohan Sebastián",
+        "lastname": "Romaña Espitia",
+        "age": 27,
+        "birth": {
+          "date": "1998-09-13",
+          "place": "Apartadó",
+          "country": "Colombia"
+        },
+        "nationality": "Colombia",
+        "height": "185",
+        "weight": "79",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/127420.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 460,
+            "name": "San Lorenzo",
+            "logo": "https://media.api-sports.io/football/teams/460.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 38,
+            "lineups": 37,
+            "minutes": 3219,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.102702",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 1,
+            "out": null,
+            "bench": null
+          },
+          "shots": {
+            "total": 16,
+            "on": 4
+          },
+          "goals": {
+            "total": null,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1518,
+            "key": 7,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 68,
+            "blocks": 30,
+            "interceptions": 63
+          },
+          "duels": {
+            "total": 370,
+            "won": 247
+          },
+          "dribbles": {
+            "attempts": 17,
+            "success": 9,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 36,
+            "committed": 42
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": null,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    },
+    {
+      "player": {
+        "id": 11417,
+        "name": "J. Insaurralde",
+        "firstname": "Juan Manuel",
+        "lastname": "Insaurralde",
+        "age": 41,
+        "birth": {
+          "date": "1984-10-03",
+          "place": "Resistencia",
+          "country": "Argentina"
+        },
+        "nationality": "Argentina",
+        "height": "187",
+        "weight": "87",
+        "injured": false,
+        "photo": "https://media.api-sports.io/football/players/11417.png"
+      },
+      "statistics": [
+        {
+          "team": {
+            "id": 474,
+            "name": "Sarmiento Junin",
+            "logo": "https://media.api-sports.io/football/teams/474.png"
+          },
+          "league": {
+            "id": 128,
+            "name": "Liga Profesional Argentina",
+            "country": "Argentina",
+            "logo": "https://media.api-sports.io/football/leagues/128.png",
+            "flag": "https://media.api-sports.io/flags/ar.svg",
+            "season": 2024
+          },
+          "games": {
+            "appearences": 38,
+            "lineups": 38,
+            "minutes": 3420,
+            "number": null,
+            "position": "Defender",
+            "rating": "7.021621",
+            "captain": false
+          },
+          "substitutes": {
+            "in": 0,
+            "out": 0,
+            "bench": 0
+          },
+          "shots": {
+            "total": 20,
+            "on": 9
+          },
+          "goals": {
+            "total": 1,
+            "conceded": 0,
+            "assists": 0,
+            "saves": null
+          },
+          "passes": {
+            "total": 1186,
+            "key": 4,
+            "accuracy": null
+          },
+          "tackles": {
+            "total": 28,
+            "blocks": 40,
+            "interceptions": 37
+          },
+          "duels": {
+            "total": 245,
+            "won": 148
+          },
+          "dribbles": {
+            "attempts": 15,
+            "success": 10,
+            "past": null
+          },
+          "fouls": {
+            "drawn": 14,
+            "committed": 32
+          },
+          "cards": {
+            "yellow": 11,
+            "yellowred": 0,
+            "red": 0
+          },
+          "penalty": {
+            "won": null,
+            "commited": null,
+            "scored": 0,
+            "missed": 0,
+            "saved": null
+          }
+        }
+      ]
+    }
+  ]
+}
