@@ -7,6 +7,7 @@
  * Run: npx tsx prisma/seed.ts
  */
 
+import "dotenv/config";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import type { Position, MatchdayStatus, MatchStatus } from "../src/generated/prisma/client";
@@ -155,7 +156,7 @@ async function main() {
         data: {
           apiId: player.apiId,
           name: player.name,
-          photo: player.photo,
+          photo: player.photo ?? "",
           age: player.age,
           number: player.number,
           position: player.position as Position,
@@ -168,7 +169,7 @@ async function main() {
           yellowCards: player.stats?.yellowCards ?? 0,
           redCards: player.stats?.redCards ?? 0,
           hasRealStats: player.hasRealStats,
-          teamId: teamDbId,
+          team: { connect: { id: teamDbId } },
         },
       });
       playerApiIdToDbId.set(player.apiId, created.id);
@@ -215,9 +216,9 @@ async function main() {
         awayScore: match.awayScore,
         status: match.status as MatchStatus,
         kickoff: new Date(match.kickoff),
-        matchdayId: matchdayDbId,
-        homeTeamId: homeTeamDbId,
-        awayTeamId: awayTeamDbId,
+        matchday: { connect: { id: matchdayDbId } },
+        homeTeam: { connect: { id: homeTeamDbId } },
+        awayTeam: { connect: { id: awayTeamDbId } },
       },
     });
     matchJsonIdToDbId.set(match.id, created.id);
@@ -249,8 +250,8 @@ async function main() {
           yellowCards: stat.yellowCards,
           redCards: stat.redCards,
           saves: stat.saves,
-          playerId: playerDbId,
-          matchId: matchDbId,
+          player: { connect: { id: playerDbId } },
+          match: { connect: { id: matchDbId } },
         },
       });
       seededStats++;
@@ -330,7 +331,7 @@ async function main() {
     const squad = await prisma.squad.create({
       data: {
         formation: "4-3-3",
-        userId: user.id,
+        user: { connect: { id: user.id } },
       },
     });
 
@@ -338,10 +339,10 @@ async function main() {
     for (let i = 0; i < starters.length; i++) {
       await prisma.squadPlayer.create({
         data: {
-          squadId: squad.id,
-          playerId: starters[i].id,
+          squad: { connect: { id: squad.id } },
+          player: { connect: { id: starters[i].id } },
           isStarter: true,
-          isCaptain: i === 0, // first player is captain (GK just for demo)
+          isCaptain: i === 0,
           isCaptainSub: i === 1,
         },
       });
@@ -351,8 +352,8 @@ async function main() {
     for (const benchPlayer of bench) {
       await prisma.squadPlayer.create({
         data: {
-          squadId: squad.id,
-          playerId: benchPlayer.id,
+          squad: { connect: { id: squad.id } },
+          player: { connect: { id: benchPlayer.id } },
           isStarter: false,
           isCaptain: false,
           isCaptainSub: false,
