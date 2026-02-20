@@ -32,11 +32,11 @@
 
 **Purpose**: Initialize the Next.js project, install dependencies, create directory structure
 
-- [ ] T001 Initialize Next.js 14 project with TypeScript, Tailwind CSS, and App Router in project root
-- [ ] T002 Install and configure shadcn/ui with retro ESPN 2003 theme: dark green (#1a472a), gold (#c5a000), white, dark gray (#333). Thick 2-3px borders, 0-2px border-radius, beveled button styles, alternating table row colors in tailwind.config.ts and src/app/globals.css
-- [ ] T003 [P] Install core dependencies: next-auth @auth/prisma-adapter prisma @prisma/client mercadopago lucide-react in package.json
-- [ ] T004 [P] Create .env.example with placeholders for DATABASE_URL, NEXTAUTH_SECRET, NEXTAUTH_URL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, MERCADOPAGO_ACCESS_TOKEN, MERCADOPAGO_PUBLIC_KEY, API_FOOTBALL_KEY, ANTHROPIC_API_KEY in .env.example
-- [ ] T005 [P] Create project directory structure: src/services/, src/providers/, src/components/{ui,player,squad,matchday,leaderboard,transfers,leagues,wallet}, src/lib/, src/types/, src/mock-data/, prisma/
+- [x] T001 Initialize Next.js 14 project with TypeScript, Tailwind CSS, and App Router in project root
+- [x] T002 Install and configure shadcn/ui with retro ESPN 2003 theme: dark green (#1a472a), gold (#c5a000), white, dark gray (#333). Thick 2-3px borders, 0-2px border-radius, beveled button styles, alternating table row colors in tailwind.config.ts and src/app/globals.css
+- [x] T003 [P] Install core dependencies: next-auth @auth/prisma-adapter prisma @prisma/client mercadopago lucide-react in package.json
+- [x] T004 [P] Create .env.example with placeholders for DATABASE_URL, NEXTAUTH_SECRET, NEXTAUTH_URL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, MERCADOPAGO_ACCESS_TOKEN, MERCADOPAGO_PUBLIC_KEY, API_FOOTBALL_KEY, ANTHROPIC_API_KEY in .env.example
+- [x] T005 [P] Create project directory structure: src/services/, src/providers/, src/components/{ui,player,squad,matchday,leaderboard,transfers,leagues,wallet}, src/lib/, src/types/, src/mock-data/, prisma/
 
 ---
 
