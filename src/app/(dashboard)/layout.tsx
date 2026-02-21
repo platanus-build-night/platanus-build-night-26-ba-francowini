@@ -83,6 +83,7 @@ function UserMenu({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!open) return;
     function handleClickOutside(e: MouseEvent) {
       if (ref.current && !ref.current.contains(e.target as Node)) {
         setOpen(false);
@@ -90,7 +91,7 @@ function UserMenu({
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [open]);
 
   if (!session?.user) return null;
 
@@ -100,13 +101,13 @@ function UserMenu({
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 text-primary-foreground text-sm hover:opacity-80"
       >
-        {session.user.image && (
+        {session.user.image ? (
           <img
             src={session.user.image}
             alt=""
             className="w-6 h-6 border border-primary-foreground/30"
           />
-        )}
+        ) : null}
         <span className="font-heading font-bold text-xs uppercase hidden sm:inline">
           {session.user.name || session.user.email}
         </span>

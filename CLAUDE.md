@@ -156,5 +156,19 @@ This project uses [GitHub Spec Kit](https://github.com/github/spec-kit).
 - TypeScript 5.x (strict mode enabled) + React 18, Tailwind CSS, shadcn/ui, Lucide icons, Prisma ORM, NextAuth.js (Auth.js v5), mercadopago SDK (001-bilardeando-mvp)
 - PostgreSQL (via Prisma) — hosted on Supabase or Railway for hackathon (001-bilardeando-mvp)
 
+## Code Quality — Required Skills
+
+**IMPORTANT**: Before pushing any feature branch, you MUST run these skills to review your code:
+
+1. **`/vercel-react-best-practices`** — Check for React/Next.js performance issues (barrel imports, waterfall fetches, bundle size, re-renders)
+2. **`/vercel-composition-patterns`** — Check component architecture (composition, prop drilling, compound components)
+
+Fix any CRITICAL or HIGH findings before merging. These skills catch common issues like:
+- Barrel imports without `optimizePackageImports` (lucide-react, etc.)
+- `useEffect` + `fetch` instead of SWR/React Query
+- Global event listeners registered unnecessarily
+- Missing input validation on API routes
+- Over-serialization in Server Component props
+
 ## Recent Changes
 - 001-bilardeando-mvp: Added TypeScript 5.x (strict mode enabled) + React 18, Tailwind CSS, shadcn/ui, Lucide icons, Prisma ORM, NextAuth.js (Auth.js v5), mercadopago SDK
