@@ -140,10 +140,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T048 [P] [US4] Create leaderboard service with getGeneralLeaderboard (sum MatchdayPoints per user, ordered by total desc) in src/services/leaderboard.service.ts
-- [ ] T049 [P] [US4] Create leaderboard table component showing rank, user name, total points, matchday-by-matchday breakdown in src/components/leaderboard/leaderboard-table.tsx
-- [ ] T050 [US4] Create leaderboard API route (GET general leaderboard with pagination) in src/app/api/leaderboard/route.ts
-- [ ] T051 [US4] Create leaderboard page with general tournament table and current user highlight in src/app/(dashboard)/leaderboard/page.tsx
+- [x] T048 [P] [US4] Create leaderboard service with getGeneralLeaderboard (sum MatchdayPoints per user, ordered by total desc) in src/services/leaderboard.service.ts
+- [x] T049 [P] [US4] Create leaderboard table component showing rank, user name, total points, matchday-by-matchday breakdown in src/components/leaderboard/leaderboard-table.tsx
+- [x] T050 [US4] Create leaderboard API route (GET general leaderboard with pagination) in src/app/api/leaderboard/route.ts
+- [x] T051 [US4] Create leaderboard page with general tournament table and current user highlight in src/app/(dashboard)/leaderboard/page.tsx
 
 **Checkpoint**: User can see global rankings with accumulated points
 
@@ -157,13 +157,13 @@
 
 ### Implementation for User Story 5
 
-- [ ] T052 [P] [US5] Create transfer service with buyPlayer (check budget), sellPlayer (apply 10% tax), validateTransfer (check matchday status) methods in src/services/transfer.service.ts
+- [x] T052 [P] [US5] Create transfer service with buyPlayer (check budget), sellPlayer (apply 10% tax), validateTransfer (check matchday status) methods in src/services/transfer.service.ts
 - [ ] T053 [P] [US5] Create substitution service with validateSwap (same position, matches not started), createSwapPayment (MP link), executeSwap methods in src/services/substitution.service.ts
-- [ ] T054 [P] [US5] Create transfer list component showing available players to buy and current squad with sell option in src/components/transfers/transfer-list.tsx
+- [x] T054 [P] [US5] Create transfer list component showing available players to buy and current squad with sell option in src/components/transfers/transfer-list.tsx
 - [ ] T055 [P] [US5] Create substitution dialog component showing eligible swap pairs (same position, unstarted matches) with pay button in src/components/squad/substitution-dialog.tsx
-- [ ] T056 [US5] Create transfer API routes (POST buy player, POST sell player) in src/app/api/transfers/route.ts
+- [x] T056 [US5] Create transfer API routes (POST buy player, POST sell player) in src/app/api/transfers/route.ts
 - [ ] T057 [US5] Create substitution API routes (GET eligible swaps, POST create swap with MP payment link) in src/app/api/squad/substitute/route.ts
-- [ ] T058 [US5] Create transfers page composing transfer list with buy/sell functionality and matchday-aware UI (disable during LOCK) in src/app/(dashboard)/transfers/page.tsx
+- [x] T058 [US5] Create transfers page composing transfer list with buy/sell functionality and matchday-aware UI (disable during LOCK) in src/app/(dashboard)/transfers/page.tsx
 - [ ] T059 [US5] Integrate Mercado Pago Checkout Pro for substitution fee ($2,000 ARS): generate payment link, redirect user, handle success callback in src/services/substitution.service.ts
 
 **Checkpoint**: User can buy/sell players during OPEN, make paid substitutions during LOCK via MP
@@ -178,17 +178,17 @@
 
 ### Implementation for User Story 6
 
-- [ ] T060 [P] [US6] Create wallet service with getBalance, loadBalance (create MP payment link), getTransactions, checkFeeWaiver methods in src/services/wallet.service.ts
-- [ ] T061 [P] [US6] Create balance display component with load balance button in src/components/wallet/balance-card.tsx
-- [ ] T062 [P] [US6] Create transaction history table component in src/components/wallet/transaction-history.tsx
-- [ ] T063 [US6] Create wallet API routes (GET balance + transactions, POST load balance request) in src/app/api/wallet/route.ts
-- [ ] T064 [US6] Create Mercado Pago webhook handler (POST receive payment notifications, update transaction status, credit user balance) in src/app/api/webhooks/mercadopago/route.ts
-- [ ] T065 [US6] Create wallet page composing balance card, load balance flow, budget purchase, and transaction history in src/app/(dashboard)/wallet/page.tsx
-- [ ] T090 [P] [US6] Create virtual budget purchase service with tiered pricing ($5M = $1,000 ARS, $10M = $1,800 ARS, $20M = $3,000 ARS), MP payment link generation, and budget credit after webhook confirmation in src/services/budget-purchase.service.ts
-- [ ] T091 [US6] Create budget purchase API route (GET available tiers, POST create purchase with MP payment link) in src/app/api/wallet/budget/route.ts
-- [ ] T092 [P] [US6] Create budget purchase UI component showing tier options with prices and buy buttons in src/components/wallet/budget-purchase.tsx
-- [ ] T093 [US6] Implement 3% service fee logic on wallet load and budget purchase transactions: apply fee to payment amount, skip fee when user balance ≥ $20,000 ARS, display fee breakdown in UI before confirming payment in src/services/wallet.service.ts and src/services/budget-purchase.service.ts
-- [ ] T094 [P] [US8] Create AI unlock purchase flow: $500 ARS one-time payment via MP Checkout Pro, set user.aiUnlocked flag on webhook confirmation, gate AI handler behind flag in src/services/bot/ai-unlock.service.ts and update T089 paywall check to use persisted flag
+- [x] T060 [P] [US6] Create wallet service with getBalance, loadBalance (create MP payment link), getTransactions, checkFeeWaiver methods in src/services/wallet.service.ts
+- [x] T061 [P] [US6] Create balance display component with load balance button in src/components/wallet/balance-card.tsx
+- [x] T062 [P] [US6] Create transaction history table component in src/components/wallet/transaction-history.tsx
+- [x] T063 [US6] Create wallet API routes (GET balance + transactions, POST load balance request) in src/app/api/wallet/route.ts
+- [x] T064 [US6] Create Mercado Pago webhook handler (POST receive payment notifications, update transaction status, credit user balance) in src/app/api/webhooks/mercadopago/route.ts
+- [x] T065 [US6] Create wallet page composing balance card, load balance flow, budget purchase, and transaction history in src/app/(dashboard)/wallet/page.tsx
+- [x] T090 [P] [US6] Create virtual budget purchase service with tiered pricing ($5M = $1,000 ARS, $10M = $1,800 ARS, $20M = $3,000 ARS), MP payment link generation, and budget credit after webhook confirmation in src/services/budget-purchase.service.ts
+- [x] T091 [US6] Create budget purchase API route (GET available tiers, POST create purchase with MP payment link) in src/app/api/wallet/budget/route.ts
+- [x] T092 [P] [US6] Create budget purchase UI component showing tier options with prices and buy buttons in src/components/wallet/budget-purchase.tsx
+- [x] T093 [US6] Implement 3% service fee logic on wallet load and budget purchase transactions: apply fee to payment amount, skip fee when user balance ≥ $20,000 ARS, display fee breakdown in UI before confirming payment in src/services/wallet.service.ts and src/services/budget-purchase.service.ts
+- [x] T094 [P] [US8] Create AI unlock purchase flow: $500 ARS one-time payment via MP Checkout Pro, set user.aiUnlocked flag on webhook confirmation, gate AI handler behind flag in src/services/bot/ai-unlock.service.ts and update T089 paywall check to use persisted flag
 
 **Checkpoint**: User can load balance via MP, purchase additional virtual budget, see transactions, service fee 3% (waived at $20k+), unlock AI features for $500 ARS
 
@@ -202,17 +202,17 @@
 
 ### Implementation for User Story 7
 
-- [ ] T066 [P] [US7] Create league service with createLeague, joinLeague, getLeagueLeaderboard, calculatePrizeDistribution, checkAutoCancel methods in src/services/league.service.ts
-- [ ] T067 [P] [US7] Create league card component showing name, buy-in, player count, status in src/components/leagues/league-card.tsx
-- [ ] T068 [P] [US7] Create create-league form component with name, buy-in slider ($10k–$100k in $5k steps), start/end matchday selectors, max players in src/components/leagues/create-league-form.tsx
-- [ ] T069 [P] [US7] Create league leaderboard component (reuses leaderboard-table with league-scoped data) in src/components/leagues/league-leaderboard.tsx
-- [ ] T070 [US7] Create leagues API routes (GET my leagues, POST create league) in src/app/api/leagues/route.ts
-- [ ] T071 [US7] Create league detail API route (GET league by code with members and leaderboard) in src/app/api/leagues/[code]/route.ts
-- [ ] T072 [US7] Create league join API route (POST join league, generate MP payment link for buy-in) in src/app/api/leagues/[code]/join/route.ts
-- [ ] T073 [US7] Create leagues list page showing my leagues and create league option in src/app/(dashboard)/leagues/page.tsx
-- [ ] T074 [US7] Create league detail page with leaderboard, invite link copy, and member list in src/app/(dashboard)/leagues/[code]/page.tsx
-- [ ] T075 [US7] Implement poker-style prize distribution logic with 5% platform rake deducted before distribution (3–6: top 1–2, 7–15: top 3, 16–20: top 4) in src/services/league.service.ts
-- [ ] T076 [US7] Implement auto-cancel logic: if <3 paid members by start matchday LOCK, refund all buy-ins and set status CANCELLED in src/services/league.service.ts
+- [x] T066 [P] [US7] Create league service with createLeague, joinLeague, getLeagueLeaderboard, calculatePrizeDistribution, checkAutoCancel methods in src/services/league.service.ts
+- [x] T067 [P] [US7] Create league card component showing name, buy-in, player count, status in src/components/leagues/league-card.tsx
+- [x] T068 [P] [US7] Create create-league form component with name, buy-in slider ($10k–$100k in $5k steps), start/end matchday selectors, max players in src/components/leagues/create-league-form.tsx
+- [x] T069 [P] [US7] Create league leaderboard component (reuses leaderboard-table with league-scoped data) in src/components/leagues/league-leaderboard.tsx
+- [x] T070 [US7] Create leagues API routes (GET my leagues, POST create league) in src/app/api/leagues/route.ts
+- [x] T071 [US7] Create league detail API route (GET league by code with members and leaderboard) in src/app/api/leagues/[code]/route.ts
+- [x] T072 [US7] Create league join API route (POST join league, generate MP payment link for buy-in) in src/app/api/leagues/[code]/join/route.ts
+- [x] T073 [US7] Create leagues list page showing my leagues and create league option in src/app/(dashboard)/leagues/page.tsx
+- [x] T074 [US7] Create league detail page with leaderboard, invite link copy, and member list in src/app/(dashboard)/leagues/[code]/page.tsx
+- [x] T075 [US7] Implement poker-style prize distribution logic with 5% platform rake deducted before distribution (3–6: top 1–2, 7–15: top 3, 16–20: top 4) in src/services/league.service.ts
+- [x] T076 [US7] Implement auto-cancel logic: if <3 paid members by start matchday LOCK, refund all buy-ins and set status CANCELLED in src/services/league.service.ts
 
 **Checkpoint**: Users can create/join paid leagues, see league leaderboard, auto-cancel works
 
@@ -226,13 +226,13 @@
 
 ### Implementation for User Story 8
 
-- [ ] T077 [P] [US8] Create WhatsApp service interface (sendMessage, receiveMessage, parseIntent) with mock implementation in src/services/whatsapp.service.ts
-- [ ] T078 [P] [US8] Create bot intent handlers for free tier: viewSquad, viewScores, viewLeaderboard, makeSubstitution in src/services/bot/intent-handlers.ts
-- [ ] T079 [P] [US8] Create bot message formatter (squad as text table, scores summary, leaderboard top 10) in src/services/bot/message-formatter.ts
+- [x] T077 [P] [US8] Create WhatsApp service interface (sendMessage, receiveMessage, parseIntent) with mock implementation in src/services/whatsapp.service.ts
+- [x] T078 [P] [US8] Create bot intent handlers for free tier: viewSquad, viewScores, viewLeaderboard, makeSubstitution in src/services/bot/intent-handlers.ts
+- [x] T079 [P] [US8] Create bot message formatter (squad as text table, scores summary, leaderboard top 10) in src/services/bot/message-formatter.ts
 - [ ] T080 [US8] Create WhatsApp webhook API route (POST receive messages, parse intent, dispatch to handler, send response) in src/app/api/webhooks/whatsapp/route.ts
-- [ ] T081 [US8] Implement AI recommendation handler using Claude API with guardrails (only fantasy-football queries, predefined intents, reject off-topic) in src/services/bot/ai-handler.ts
-- [ ] T082 [US8] Create bot configuration with intent patterns and response templates in src/services/bot/bot-config.ts
-- [ ] T089 [US8] Add AI paywall check: verify user has paid for AI features before dispatching to ai-handler, return upgrade prompt for free users in src/services/bot/intent-handlers.ts
+- [x] T081 [US8] Implement AI recommendation handler using Claude API with guardrails (only fantasy-football queries, predefined intents, reject off-topic) in src/services/bot/ai-handler.ts
+- [x] T082 [US8] Create bot configuration with intent patterns and response templates in src/services/bot/bot-config.ts
+- [x] T089 [US8] Add AI paywall check: verify user has paid for AI features before dispatching to ai-handler, return upgrade prompt for free users in src/services/bot/intent-handlers.ts
 
 **Checkpoint**: WhatsApp bot responds to squad/score/leaderboard queries, AI tips work for paid users only
 
