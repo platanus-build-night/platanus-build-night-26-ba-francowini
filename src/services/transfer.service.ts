@@ -1,11 +1,18 @@
 import { prisma } from "@/lib/db";
-import { addPlayerToSquad } from "@/services/squad.service";
-import { SELL_TAX_RATE } from "@/lib/formations";
+import { addPlayerToSquad, getOrCreateSquad } from "@/services/squad.service";
+import { SELL_TAX_RATE, MAX_BENCH } from "@/lib/formations";
 
-// ── Buy player (delegates to squad service, adds to bench) ──
+// ── Buy player (tries bench first, then starter if bench is full) ──
 
 export async function buyPlayer(userId: string, playerId: number) {
-  return addPlayerToSquad(userId, playerId, false);
+  const squad = await getOrCreateSquad(userId);
+  const benchCount = await prisma.squadPlayer.count({
+    where: { squadId: squad.id, isStarter: false },
+  });
+
+  // Try bench first, fall back to starter if bench is full
+  const isStarter = benchCount >= MAX_BENCH;
+  return addPlayerToSquad(userId, playerId, isStarter);
 }
 
 // ── Sell player with 10% tax ──

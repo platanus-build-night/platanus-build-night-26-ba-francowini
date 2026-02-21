@@ -88,10 +88,15 @@ export default function SquadPage() {
           return;
         }
         const data = await res.json();
+        const msgs: string[] = [];
         if (data.movedToBench?.length > 0) {
-          setToast(
-            `Movidos al banco: ${data.movedToBench.join(", ")}`,
-          );
+          msgs.push(`Al banco: ${data.movedToBench.join(", ")}`);
+        }
+        if (data.promotedToStarter?.length > 0) {
+          msgs.push(`A titular: ${data.promotedToStarter.join(", ")}`);
+        }
+        if (msgs.length > 0) {
+          setToast(msgs.join(" | "));
         }
       }
       await fetchSquad();

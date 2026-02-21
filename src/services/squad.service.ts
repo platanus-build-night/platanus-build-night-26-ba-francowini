@@ -83,7 +83,7 @@ export async function getOrCreateSquad(userId: string, formation: FormationCode 
   return squad;
 }
 
-// ── Update formation (auto-moves excess starters to bench) ──
+// ── Update formation (auto-swaps excess starters ↔ bench) ──
 
 export async function updateFormation(userId: string, formation: FormationCode) {
   if (!isValidFormation(formation)) {
@@ -96,7 +96,7 @@ export async function updateFormation(userId: string, formation: FormationCode) 
   }
 
   const starters = squad.squadPlayers.filter((sp) => sp.isStarter);
-  const benchCount = squad.squadPlayers.filter((sp) => !sp.isStarter).length;
+  const benchPlayers = squad.squadPlayers.filter((sp) => !sp.isStarter);
   const slots = FORMATIONS[formation].slots;
   const countByPos: Record<string, number> = { GK: 0, DEF: 0, MID: 0, FWD: 0 };
 
@@ -104,7 +104,7 @@ export async function updateFormation(userId: string, formation: FormationCode) 
     countByPos[sp.player.position]++;
   }
 
-  // Find excess starters per position, pick lowest-rated first
+  // Find excess starters per position (demote to bench), pick lowest-rated first
   const toBench: { id: number; name: string }[] = [];
   for (const pos of ["GK", "DEF", "MID", "FWD"] as const) {
     const excess = countByPos[pos] - slots[pos];
@@ -118,19 +118,41 @@ export async function updateFormation(userId: string, formation: FormationCode) 
     }
   }
 
-  // Check bench capacity
-  if (benchCount + toBench.length > MAX_BENCH) {
+  // Find deficit positions (promote from bench)
+  const toStarter: { id: number; name: string }[] = [];
+  for (const pos of ["GK", "DEF", "MID", "FWD"] as const) {
+    const deficit = slots[pos] - countByPos[pos];
+    if (deficit > 0) {
+      const posBench = benchPlayers
+        .filter((sp) => sp.player.position === pos)
+        .sort((a, b) => (b.player.rating ?? 0) - (a.player.rating ?? 0));
+      for (let i = 0; i < Math.min(deficit, posBench.length); i++) {
+        toStarter.push({ id: posBench[i].id, name: posBench[i].player.name });
+      }
+    }
+  }
+
+  // Check net bench change fits
+  const netBenchChange = toBench.length - toStarter.length;
+  const newBenchCount = benchPlayers.length + netBenchChange;
+  if (newBenchCount > MAX_BENCH) {
     return {
       error: `No hay lugar en el banco para mover ${toBench.length} jugador(es). Vendé suplentes primero.`,
     };
   }
 
-  // Transaction: move excess to bench + update formation
+  // Transaction: demote excess + promote from bench + update formation
   await prisma.$transaction([
     ...toBench.map((sp) =>
       prisma.squadPlayer.update({
         where: { id: sp.id },
         data: { isStarter: false, isCaptain: false, isCaptainSub: false },
+      }),
+    ),
+    ...toStarter.map((sp) =>
+      prisma.squadPlayer.update({
+        where: { id: sp.id },
+        data: { isStarter: true },
       }),
     ),
     prisma.squad.update({
@@ -142,6 +164,7 @@ export async function updateFormation(userId: string, formation: FormationCode) 
   return {
     success: true,
     movedToBench: toBench.map((sp) => sp.name),
+    promotedToStarter: toStarter.map((sp) => sp.name),
   };
 }
 

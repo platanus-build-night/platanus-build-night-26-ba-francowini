@@ -84,5 +84,6 @@ export async function PUT(request: NextRequest) {
   return successResponse({
     success: true,
     movedToBench: "movedToBench" in result ? result.movedToBench : [],
+    promotedToStarter: "promotedToStarter" in result ? result.promotedToStarter : [],
   });
 }
