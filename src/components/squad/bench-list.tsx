@@ -22,18 +22,19 @@ interface DragData {
 interface BenchListProps {
   players: BenchPlayer[];
   onRemove?: (playerId: number) => void;
-  onPlayerClick?: (playerId: number) => void;
+  onMoveToStarter?: (playerId: number) => void;
   onSwap?: (playerIdA: number, playerIdB: number) => void;
 }
 
 export function BenchList({
   players,
   onRemove,
-  onPlayerClick,
+  onMoveToStarter,
   onSwap,
 }: BenchListProps) {
   const [isDragOver, setIsDragOver] = useState(false);
   const [dragOverPlayerId, setDragOverPlayerId] = useState<number | null>(null);
+  const [hoveredPlayerId, setHoveredPlayerId] = useState<number | null>(null);
 
   function handleDragStart(e: React.DragEvent, player: BenchPlayer) {
     const data: DragData = {
@@ -52,7 +53,6 @@ export function BenchList({
   }
 
   function handleContainerDragLeave(e: React.DragEvent) {
-    // Only clear if leaving the container entirely
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     const { clientX, clientY } = e;
     if (
@@ -70,9 +70,8 @@ export function BenchList({
     setIsDragOver(false);
     try {
       const data: DragData = JSON.parse(e.dataTransfer.getData("application/json"));
-      // If a starter is dropped on the bench container, toggle them
       if (data.isStarter) {
-        onPlayerClick?.(data.playerId);
+        onMoveToStarter?.(data.playerId);
       }
     } catch {
       // ignore
@@ -106,9 +105,9 @@ export function BenchList({
   return (
     <div className="card-retro">
       <div className="card-retro-header flex items-center justify-between">
-        <span>Suplentes</span>
+        <span>Suplentes — 0.5× puntos</span>
         <span className="text-xs font-normal opacity-80">
-          {players.length}/7 — 0.5× puntos
+          {players.length}/7
           {onSwap && (
             <span className="ml-2 text-accent">Arrastrá aquí</span>
           )}
@@ -135,32 +134,54 @@ export function BenchList({
           <div className="space-y-1">
             {players.map((player) => {
               const isTarget = dragOverPlayerId === player.id;
+              const isHovered = hoveredPlayerId === player.id;
               return (
                 <div
                   key={player.id}
+                  className={`relative transition-all ${
+                    isTarget
+                      ? "ring-2 ring-green-400 scale-[1.02]"
+                      : ""
+                  }`}
                   draggable={!!onSwap}
                   onDragStart={(e) => handleDragStart(e, player)}
                   onDragOver={(e) => handlePlayerDragOver(e, player.id)}
                   onDragLeave={handlePlayerDragLeave}
                   onDrop={(e) => handlePlayerDrop(e, player.id)}
-                  className={`cursor-pointer transition-all ${
-                    isTarget
-                      ? "ring-2 ring-green-400 scale-[1.02]"
-                      : ""
-                  }`}
-                  onClick={() => onPlayerClick?.(player.id)}
+                  onMouseEnter={() => setHoveredPlayerId(player.id)}
+                  onMouseLeave={() => setHoveredPlayerId(null)}
                 >
-                  <PlayerCard
-                    id={player.id}
-                    name={player.name}
-                    photo={player.photo}
-                    position={player.position}
-                    teamName={player.teamName}
-                    rating={player.rating}
-                    fantasyPrice={player.fantasyPrice}
-                    compact
-                    onRemove={onRemove ? () => onRemove(player.id) : undefined}
-                  />
+                  <div className="flex items-center gap-1">
+                    <span className="text-[9px] font-bold text-muted-foreground w-6 text-center flex-shrink-0">
+                      0.5×
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <PlayerCard
+                        id={player.id}
+                        name={player.name}
+                        photo={player.photo}
+                        position={player.position}
+                        teamName={player.teamName}
+                        rating={player.rating}
+                        fantasyPrice={player.fantasyPrice}
+                        compact
+                        onRemove={onRemove ? () => onRemove(player.id) : undefined}
+                      />
+                    </div>
+                    {/* Hover action: move to starters */}
+                    {isHovered && onMoveToStarter && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onMoveToStarter(player.id);
+                        }}
+                        className="btn-retro text-[9px] px-1.5 py-0.5 bg-primary text-primary-foreground border-primary flex-shrink-0"
+                        title="Mover a titulares"
+                      >
+                        ↑ Titular
+                      </button>
+                    )}
+                  </div>
                 </div>
               );
             })}

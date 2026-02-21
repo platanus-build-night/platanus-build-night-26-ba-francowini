@@ -18,7 +18,8 @@ interface PitchPlayer {
 interface PitchViewProps {
   formation: FormationCode;
   starters: PitchPlayer[];
-  onPlayerClick?: (playerId: number) => void;
+  onSetCaptain?: (playerId: number) => void;
+  onSetCaptainSub?: (playerId: number) => void;
   onSlotClick?: (position: "GK" | "DEF" | "MID" | "FWD") => void;
   onSwap?: (playerIdA: number, playerIdB: number) => void;
   onMoveToBench?: (playerId: number) => void;
@@ -40,14 +41,15 @@ interface DragData {
 export function PitchView({
   formation,
   starters,
-  onPlayerClick,
+  onSetCaptain,
+  onSetCaptainSub,
   onSlotClick,
   onSwap,
   onMoveToBench,
 }: PitchViewProps) {
   const [dragOverId, setDragOverId] = useState<string | null>(null);
+  const [hoveredPlayerId, setHoveredPlayerId] = useState<number | null>(null);
 
-  const slots = FORMATIONS[formation].slots;
   const rows = formation.split("-").map(Number);
   const posOrder: ("GK" | "DEF" | "MID" | "FWD")[] = [
     "GK",
@@ -113,25 +115,20 @@ export function PitchView({
     }
   }
 
-  function handleDropOnSlot(e: React.DragEvent, slotPosition: string) {
+  function handleDropOnSlot(e: React.DragEvent) {
     e.preventDefault();
     setDragOverId(null);
-    try {
-      const data: DragData = JSON.parse(e.dataTransfer.getData("application/json"));
-      // If from bench, toggle to starter
-      if (!data.isStarter && data.position === slotPosition) {
-        // Find the closest slot — just toggle starter via the parent handler
-        // The parent page handles this through onSwap or toggleStarter
-      }
-    } catch {
-      // ignore
-    }
   }
 
   return (
     <div className="card-retro">
       <div className="card-retro-header flex items-center justify-between">
-        <span>Cancha — {formation}</span>
+        <span>
+          Cancha — {formation}
+          <span className="ml-2 text-[10px] font-normal opacity-80">
+            Titulares: 1× puntos (Capitán: 2×)
+          </span>
+        </span>
         <span className="text-xs font-normal opacity-80">
           {starters.length}/11 titulares
           {onSwap && (
@@ -168,59 +165,118 @@ export function PitchView({
               >
                 {row.players.map((player) => {
                   const isDropTarget = dragOverId === `player-${player.id}`;
+                  const isHovered = hoveredPlayerId === player.id;
                   return (
-                    <button
+                    <div
                       key={player.id}
-                      draggable={!!onSwap}
-                      onDragStart={(e) => handleDragStart(e, player)}
-                      onDragOver={(e) =>
-                        handleDragOver(e, `player-${player.id}`)
-                      }
-                      onDragLeave={handleDragLeave}
-                      onDrop={(e) => handleDropOnPlayer(e, player)}
-                      onClick={() => onPlayerClick?.(player.id)}
-                      className={`flex flex-col items-center gap-0.5 w-16 group ${
-                        isDropTarget ? "scale-110" : ""
-                      }`}
+                      className="relative"
+                      onMouseEnter={() => setHoveredPlayerId(player.id)}
+                      onMouseLeave={() => setHoveredPlayerId(null)}
                     >
                       <div
-                        className={`relative ${
-                          isDropTarget
-                            ? "ring-2 ring-green-400 ring-offset-1"
-                            : ""
+                        draggable={!!onSwap}
+                        onDragStart={(e) => handleDragStart(e, player)}
+                        onDragOver={(e) =>
+                          handleDragOver(e, `player-${player.id}`)
+                        }
+                        onDragLeave={handleDragLeave}
+                        onDrop={(e) => handleDropOnPlayer(e, player)}
+                        className={`flex flex-col items-center gap-0.5 w-16 cursor-pointer ${
+                          isDropTarget ? "scale-110" : ""
                         }`}
                       >
-                        <img
-                          src={player.photo}
-                          alt={player.name}
-                          className={`w-10 h-10 border-2 object-cover group-hover:border-accent ${
+                        <div
+                          className={`relative ${
                             isDropTarget
-                              ? "border-green-400"
-                              : "border-white/50"
+                              ? "ring-2 ring-green-400 ring-offset-1"
+                              : ""
                           }`}
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).src =
-                              "/placeholder-player.png";
-                          }}
-                        />
-                        {player.isCaptain && (
-                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent border border-white flex items-center justify-center">
-                            <Shield className="w-2.5 h-2.5 text-accent-foreground" />
-                          </div>
-                        )}
-                        {player.isCaptainSub && (
-                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/60 border border-white flex items-center justify-center text-[8px] font-bold text-accent-foreground">
-                            CS
-                          </div>
-                        )}
+                        >
+                          <img
+                            src={player.photo}
+                            alt={player.name}
+                            className={`w-10 h-10 border-2 object-cover ${
+                              isHovered
+                                ? "border-accent"
+                                : isDropTarget
+                                  ? "border-green-400"
+                                  : "border-white/50"
+                            }`}
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src =
+                                "/placeholder-player.png";
+                            }}
+                          />
+                          {player.isCaptain && (
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent border border-white flex items-center justify-center">
+                              <Shield className="w-2.5 h-2.5 text-accent-foreground" />
+                            </div>
+                          )}
+                          {player.isCaptainSub && (
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent/60 border border-white flex items-center justify-center text-[8px] font-bold text-accent-foreground">
+                              CS
+                            </div>
+                          )}
+                        </div>
+                        <span className="text-[10px] text-white font-heading font-bold truncate w-full text-center drop-shadow-md">
+                          {player.name.split(" ").pop()}
+                        </span>
+                        <div className="flex items-center gap-0.5">
+                          <span className="text-[9px] text-white/70">
+                            {player.rating ? player.rating.toFixed(1) : "-"}
+                          </span>
+                          <span className={`text-[8px] font-bold ${
+                            player.isCaptain
+                              ? "text-accent"
+                              : "text-white/50"
+                          }`}>
+                            {player.isCaptain ? "2×" : "1×"}
+                          </span>
+                        </div>
                       </div>
-                      <span className="text-[10px] text-white font-heading font-bold truncate w-full text-center drop-shadow-md">
-                        {player.name.split(" ").pop()}
-                      </span>
-                      <span className="text-[9px] text-white/70">
-                        {player.rating ? player.rating.toFixed(1) : "-"}
-                      </span>
-                    </button>
+
+                      {/* Hover popover with actions */}
+                      {isHovered && (onSetCaptain || onSetCaptainSub || onMoveToBench) && (
+                        <div className="absolute z-20 -bottom-9 left-1/2 -translate-x-1/2 flex gap-0.5 bg-[#1a472a] border-2 border-accent p-0.5 shadow-lg">
+                          {!player.isCaptain && onSetCaptain && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onSetCaptain(player.id);
+                              }}
+                              className="btn-retro text-[9px] px-1.5 py-0.5 bg-accent text-accent-foreground border-accent"
+                              title="Hacer capitán"
+                            >
+                              C
+                            </button>
+                          )}
+                          {!player.isCaptainSub && onSetCaptainSub && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onSetCaptainSub(player.id);
+                              }}
+                              className="btn-retro text-[9px] px-1.5 py-0.5 bg-muted text-foreground border-border"
+                              title="Capitán suplente"
+                            >
+                              CS
+                            </button>
+                          )}
+                          {onMoveToBench && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onMoveToBench(player.id);
+                              }}
+                              className="btn-retro text-[9px] px-1.5 py-0.5 bg-muted text-foreground border-border"
+                              title="Mover al banco"
+                            >
+                              ↓ Banco
+                            </button>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   );
                 })}
                 {/* Empty slots */}
@@ -233,7 +289,7 @@ export function PitchView({
                       onClick={() => onSlotClick?.(row.position)}
                       onDragOver={(e) => handleDragOver(e, slotId)}
                       onDragLeave={handleDragLeave}
-                      onDrop={(e) => handleDropOnSlot(e, row.position)}
+                      onDrop={(e) => handleDropOnSlot(e)}
                       className="flex flex-col items-center gap-0.5 w-16"
                     >
                       <div

@@ -6,7 +6,7 @@ import { FormationSelector } from "@/components/squad/formation-selector";
 import { PitchView } from "@/components/squad/pitch-view";
 import { BenchList } from "@/components/squad/bench-list";
 import { BudgetBar } from "@/components/squad/budget-bar";
-import { Shield, AlertTriangle, Check, ArrowLeftRight } from "lucide-react";
+import { AlertTriangle, Check, ArrowLeftRight } from "lucide-react";
 import type { FormationCode, SquadValidation } from "@/types";
 import { STARTING_BUDGET } from "@/lib/formations";
 
@@ -217,12 +217,23 @@ export default function SquadPage() {
         </div>
       )}
 
-      {/* Budget bar (read-only) */}
-      <BudgetBar
-        totalBudget={STARTING_BUDGET}
-        spent={totalSpent}
-        playerCount={squad?.players.length ?? 0}
-      />
+      {/* Budget bar + market link */}
+      <div className="flex items-start gap-4">
+        <div className="flex-1">
+          <BudgetBar
+            totalBudget={STARTING_BUDGET}
+            spent={totalSpent}
+            playerCount={squad?.players.length ?? 0}
+          />
+        </div>
+        <Link
+          href="/transfers"
+          className="btn-retro-accent flex items-center gap-1 text-xs whitespace-nowrap mt-1"
+        >
+          <ArrowLeftRight className="w-3 h-3" />
+          Mercado de Pases
+        </Link>
+      </div>
 
       {/* Formation selector */}
       <FormationSelector
@@ -231,154 +242,51 @@ export default function SquadPage() {
         disabled={actionLoading}
       />
 
-      {/* Link to transfers */}
-      <Link
-        href="/transfers"
-        className="btn-retro-accent w-full flex items-center justify-center gap-2"
-      >
-        <ArrowLeftRight className="w-4 h-4" />
-        Ir al Mercado de Pases
-      </Link>
-
-      {/* Pitch + Bench (full width) */}
-      <div className="space-y-4">
-        {/* Pitch */}
-        <PitchView
-          formation={formation}
-          starters={starters.map((p) => ({
-            id: p.id,
-            name: p.name,
-            position: p.position,
-            photo: p.photo,
-            rating: p.rating,
-            isCaptain: p.isCaptain,
-            isCaptainSub: p.isCaptainSub,
-          }))}
-          onPlayerClick={(playerId) => {
-            const player = starters.find((p) => p.id === playerId);
-            if (player && !player.isCaptain) {
-              handlePlayerAction(playerId, "captain");
+      {/* 2-column layout: Bench (1/3) | Pitch (2/3) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {/* Left: Bench */}
+        <div className="lg:col-span-1 order-2 lg:order-1">
+          <BenchList
+            players={bench.map((p) => ({
+              id: p.id,
+              name: p.name,
+              photo: p.photo,
+              position: p.position,
+              teamName: p.teamName,
+              rating: p.rating,
+              fantasyPrice: p.fantasyPrice,
+            }))}
+            onMoveToStarter={(playerId) =>
+              handlePlayerAction(playerId, "toggleStarter")
             }
-          }}
-          onSwap={handleSwap}
-          onMoveToBench={(playerId) =>
-            handlePlayerAction(playerId, "toggleStarter")
-          }
-        />
+            onSwap={handleSwap}
+          />
+        </div>
 
-        {/* Bench */}
-        <BenchList
-          players={bench.map((p) => ({
-            id: p.id,
-            name: p.name,
-            photo: p.photo,
-            position: p.position,
-            teamName: p.teamName,
-            rating: p.rating,
-            fantasyPrice: p.fantasyPrice,
-          }))}
-          onPlayerClick={(playerId) =>
-            handlePlayerAction(playerId, "toggleStarter")
-          }
-          onSwap={handleSwap}
-        />
-
-        {/* Starter list (quick actions) */}
-        <div className="card-retro">
-          <div className="card-retro-header flex items-center gap-2">
-            <Shield className="w-4 h-4" />
-            Titulares — Acciones
-          </div>
-          <div className="card-retro-body">
-            {starters.length === 0 ? (
-              <div className="text-center text-sm text-muted-foreground py-4">
-                Comprá jugadores en el{" "}
-                <Link href="/transfers" className="underline text-accent font-bold">
-                  Mercado de Pases
-                </Link>
-              </div>
-            ) : (
-              <table className="table-retro">
-                <thead>
-                  <tr>
-                    <th>Jugador</th>
-                    <th>Pos</th>
-                    <th>Rating</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {starters.map((p) => (
-                    <tr key={p.id}>
-                      <td className="font-heading font-bold text-xs">
-                        {p.name}
-                        {p.isCaptain && (
-                          <span className="ml-1 badge-position bg-accent text-accent-foreground">
-                            C
-                          </span>
-                        )}
-                        {p.isCaptainSub && (
-                          <span className="ml-1 badge-position bg-accent/60 text-accent-foreground">
-                            CS
-                          </span>
-                        )}
-                      </td>
-                      <td>
-                        <span
-                          className={`badge-${p.position.toLowerCase()}`}
-                        >
-                          {p.position}
-                        </span>
-                      </td>
-                      <td className="text-center font-heading">
-                        {p.rating?.toFixed(1) || "-"}
-                      </td>
-                      <td className="text-center text-xs">
-                        ${p.fantasyPrice.toFixed(1)}M
-                      </td>
-                      <td className="space-x-1">
-                        {!p.isCaptain && (
-                          <button
-                            onClick={() =>
-                              handlePlayerAction(p.id, "captain")
-                            }
-                            className="btn-retro text-[10px] px-1 py-0.5 bg-accent text-accent-foreground border-accent"
-                            disabled={actionLoading}
-                            title="Hacer capitán"
-                          >
-                            C
-                          </button>
-                        )}
-                        {!p.isCaptainSub && (
-                          <button
-                            onClick={() =>
-                              handlePlayerAction(p.id, "captainSub")
-                            }
-                            className="btn-retro text-[10px] px-1 py-0.5 bg-muted text-foreground border-border"
-                            disabled={actionLoading}
-                            title="Capitán suplente"
-                          >
-                            CS
-                          </button>
-                        )}
-                        <button
-                          onClick={() =>
-                            handlePlayerAction(p.id, "toggleStarter")
-                          }
-                          className="btn-retro text-[10px] px-1 py-0.5 bg-muted text-foreground border-border"
-                          disabled={actionLoading}
-                          title="Mover al banco"
-                        >
-                          ↓
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            )}
-          </div>
+        {/* Right: Pitch */}
+        <div className="lg:col-span-2 order-1 lg:order-2">
+          <PitchView
+            formation={formation}
+            starters={starters.map((p) => ({
+              id: p.id,
+              name: p.name,
+              position: p.position,
+              photo: p.photo,
+              rating: p.rating,
+              isCaptain: p.isCaptain,
+              isCaptainSub: p.isCaptainSub,
+            }))}
+            onSetCaptain={(playerId) =>
+              handlePlayerAction(playerId, "captain")
+            }
+            onSetCaptainSub={(playerId) =>
+              handlePlayerAction(playerId, "captainSub")
+            }
+            onSwap={handleSwap}
+            onMoveToBench={(playerId) =>
+              handlePlayerAction(playerId, "toggleStarter")
+            }
+          />
         </div>
       </div>
     </div>

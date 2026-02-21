@@ -1,6 +1,7 @@
 "use client";
 
 import { PlayerCard } from "@/components/player/player-card";
+import { SELL_TAX_RATE } from "@/lib/formations";
 
 interface RosterPlayer {
   id: number;
@@ -17,6 +18,7 @@ interface SquadRosterProps {
   players: RosterPlayer[];
   onSell: (playerId: number) => void;
   disabled?: boolean;
+  showSellTax?: boolean;
 }
 
 const POSITION_ORDER = ["GK", "DEF", "MID", "FWD"] as const;
@@ -27,7 +29,7 @@ const POSITION_LABELS: Record<string, string> = {
   FWD: "Delanteros",
 };
 
-export function SquadRoster({ players, onSell, disabled }: SquadRosterProps) {
+export function SquadRoster({ players, onSell, disabled, showSellTax }: SquadRosterProps) {
   const grouped = POSITION_ORDER.map((pos) => ({
     position: pos,
     label: POSITION_LABELS[pos],
@@ -64,22 +66,39 @@ export function SquadRoster({ players, onSell, disabled }: SquadRosterProps) {
                 </div>
               ) : (
                 <div className="space-y-1">
-                  {group.players.map((player) => (
-                    <PlayerCard
-                      key={player.id}
-                      id={player.id}
-                      name={player.name}
-                      photo={player.photo}
-                      position={player.position}
-                      teamName={player.teamName}
-                      rating={player.rating}
-                      fantasyPrice={player.fantasyPrice}
-                      compact
-                      onRemove={
-                        disabled ? undefined : () => onSell(player.id)
-                      }
-                    />
-                  ))}
+                  {group.players.map((player) => {
+                    const sellValue = player.fantasyPrice * (1 - SELL_TAX_RATE);
+                    return (
+                      <div key={player.id} className="flex items-center gap-1">
+                        <div className="flex-1 min-w-0">
+                          <PlayerCard
+                            id={player.id}
+                            name={player.name}
+                            photo={player.photo}
+                            position={player.position}
+                            teamName={player.teamName}
+                            rating={player.rating}
+                            fantasyPrice={player.fantasyPrice}
+                            compact
+                          />
+                        </div>
+                        {!disabled && (
+                          <button
+                            onClick={() => onSell(player.id)}
+                            className="btn-retro text-[9px] px-1.5 py-1 bg-destructive text-destructive-foreground border-destructive flex-shrink-0"
+                          >
+                            {showSellTax ? (
+                              <span title={`Valor: $${player.fantasyPrice.toFixed(1)}M — Impuesto 10%`}>
+                                Vender ${sellValue.toFixed(1)}M
+                              </span>
+                            ) : (
+                              "✕"
+                            )}
+                          </button>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>

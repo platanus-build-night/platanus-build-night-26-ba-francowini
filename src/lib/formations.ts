@@ -49,6 +49,7 @@ export const MAX_SQUAD_SIZE = 18;
 export const MAX_STARTERS = 11;
 export const MAX_BENCH = 7;
 export const STARTING_BUDGET = 150; // $150M
+export const SELL_TAX_RATE = 0.1; // 10% sell tax
 
 /**
  * Get the formation slot requirements for starters.

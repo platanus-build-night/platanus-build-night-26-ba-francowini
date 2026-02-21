@@ -96,7 +96,7 @@ interface StatJson {
 async function main() {
   console.log("Seeding database...");
 
-  // Clear existing data (in reverse dependency order)
+  // Clear ALL data (in reverse dependency order) — full flush
   await prisma.squadPlayerPoints.deleteMany();
   await prisma.matchdayPoints.deleteMany();
   await prisma.squadPlayer.deleteMany();
@@ -109,9 +109,11 @@ async function main() {
   await prisma.matchday.deleteMany();
   await prisma.player.deleteMany();
   await prisma.team.deleteMany();
-  // Don't delete users/accounts/sessions — preserve auth data
+  await prisma.session.deleteMany();
+  await prisma.account.deleteMany();
+  await prisma.user.deleteMany();
 
-  console.log("Cleared existing game data.");
+  console.log("Flushed ALL data (including users).");
 
   // ── 1. Seed Teams ──
   const teams = teamsJson as TeamJson[];
@@ -262,25 +264,16 @@ async function main() {
   );
 
   // ── 6. Create Demo Users with Squads ──
-  // Juan: no squad (full $150M budget) for testing transfers
+  // Juan: squad built by rating (top-rated, ~$101M) — for testing squad/transfers
   // María: squad built by rating (top-rated, ~$101M)
   // Carlos: squad built by rating with offset (~$80M)
   const demoUsers = [
-    { email: "demo1@bilardeando.com", name: "Juan Demo", buildSquad: false, ratingOffset: 0 },
+    { email: "demo1@bilardeando.com", name: "Juan Demo", buildSquad: true, ratingOffset: 0 },
     { email: "demo2@bilardeando.com", name: "María Demo", buildSquad: true, ratingOffset: 0 },
     { email: "demo3@bilardeando.com", name: "Carlos Demo", buildSquad: true, ratingOffset: 5 },
   ];
 
   for (const demoUser of demoUsers) {
-    const existing = await prisma.user.findUnique({
-      where: { email: demoUser.email },
-    });
-
-    if (existing) {
-      console.log(`Demo user ${demoUser.email} already exists, skipping.`);
-      continue;
-    }
-
     const user = await prisma.user.create({
       data: {
         email: demoUser.email,
@@ -297,29 +290,31 @@ async function main() {
       continue;
     }
 
-    // Build a 4-3-3 squad sorted by rating (not price) to stay within budget
-    const offset = demoUser.ratingOffset;
+    // Build a 4-3-3 squad (18 players) sorted by price ascending to stay within budget
+    // GK: 3 (1 starter + 2 bench), DEF: 6 (4 starter + 2 bench),
+    // MID: 5 (3 starter + 2 bench), FWD: 4 (3 starter + 1 bench) = 18 total
+    const offset = demoUser.ratingOffset * 18; // offset by full squad to avoid overlap
     const gks = await prisma.player.findMany({
-      where: { position: "GK", rating: { not: null } },
-      orderBy: { rating: "desc" },
+      where: { position: "GK" },
+      orderBy: { fantasyPrice: "asc" },
       skip: offset,
       take: 3,
     });
     const defs = await prisma.player.findMany({
-      where: { position: "DEF", rating: { not: null } },
-      orderBy: { rating: "desc" },
+      where: { position: "DEF" },
+      orderBy: { fantasyPrice: "asc" },
       skip: offset,
       take: 6,
     });
     const mids = await prisma.player.findMany({
-      where: { position: "MID", rating: { not: null } },
-      orderBy: { rating: "desc" },
+      where: { position: "MID" },
+      orderBy: { fantasyPrice: "asc" },
       skip: offset,
       take: 5,
     });
     const fwds = await prisma.player.findMany({
-      where: { position: "FWD", rating: { not: null } },
-      orderBy: { rating: "desc" },
+      where: { position: "FWD" },
+      orderBy: { fantasyPrice: "asc" },
       skip: offset,
       take: 4,
     });
