@@ -107,6 +107,27 @@ Before every commit, check for:
 - `*.pem`, `*.key`, `*.p12`
 - `.env` (use `.env.example` with placeholders instead)
 
+## Vercel Deploy Checklist
+
+**IMPORTANT**: Whenever you add or change any of the following, you MUST remind the user to update Vercel:
+- New environment variable (added to `.env.example`) → tell user to add it in **Vercel > Settings > Environment Variables**
+- New infrastructure dependency (database, external service, webhook URL) → tell user to configure it
+- Changes to build command or `postinstall` script → tell user to verify Vercel build settings
+- New API route that requires a specific env var → tell user which var is needed
+
+**Current Vercel env vars required:**
+| Variable | Status | Phase |
+|---|---|---|
+| `DATABASE_URL` | Required now | Phase 2 |
+| `NEXTAUTH_SECRET` | Needed for auth | Phase 3 |
+| `NEXTAUTH_URL` | Needed for auth | Phase 3 |
+| `GOOGLE_CLIENT_ID` | Needed for login | Phase 3 |
+| `GOOGLE_CLIENT_SECRET` | Needed for login | Phase 3 |
+| `MERCADOPAGO_ACCESS_TOKEN` | Needed for payments | Phase 7-8 |
+| `MERCADOPAGO_PUBLIC_KEY` | Needed for payments | Phase 7-8 |
+| `API_FOOTBALL_KEY` | Optional (mock data) | — |
+| `ANTHROPIC_API_KEY` | Needed for AI bot | Phase 10 |
+
 ## Spec-Driven Development (Spec Kit)
 
 This project uses [GitHub Spec Kit](https://github.com/github/spec-kit).
