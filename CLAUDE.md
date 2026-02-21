@@ -121,8 +121,8 @@ Before every commit, check for:
 | `DATABASE_URL` | Required now | Phase 2 |
 | `NEXTAUTH_SECRET` | Needed for auth | Phase 3 |
 | `NEXTAUTH_URL` | Needed for auth | Phase 3 |
-| `GOOGLE_CLIENT_ID` | Needed for login | Phase 3 |
-| `GOOGLE_CLIENT_SECRET` | Needed for login | Phase 3 |
+| `GOOGLE_CLIENT_ID` | Post-MVP (OAuth) | — |
+| `GOOGLE_CLIENT_SECRET` | Post-MVP (OAuth) | — |
 | `MERCADOPAGO_ACCESS_TOKEN` | Needed for payments | Phase 7-8 |
 | `MERCADOPAGO_PUBLIC_KEY` | Needed for payments | Phase 7-8 |
 | `API_FOOTBALL_KEY` | Optional (mock data) | — |

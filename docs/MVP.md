@@ -214,14 +214,14 @@ Fantasy football platform for Argentine football. Users build a squad, earn poin
 
 ## 8. Web App — Key Screens
 
-1. **Landing / Login** — Sign in with Google OAuth.
+1. **Landing / Login** — Pick a demo user to sign in.
 2. **Squad Builder** — Pick 11 starters + 7 bench from player catalog.
 3. **Matchday View** — Live scores, your squad's points, match status.
 4. **Leaderboard** — General ranking + private league rankings.
 5. **Transfers / Swaps** — Replace players who didn't play (with cost).
 6. **Private Leagues** — Create/join leagues with buy-in.
 7. **Wallet / Balance** — View balance, load funds, transaction history.
-8. **Profile** — User info, Google account details.
+8. **Profile** — User info, account details.
 
 **Desktop-first** — WhatsApp covers the mobile experience.
 
@@ -231,9 +231,10 @@ Fantasy football platform for Argentine football. Users build a squad, earn poin
 
 ## 9. Authentication
 
-- **Google OAuth** as the sole login method for MVP.
-- Phone/WhatsApp OTP is deferred to post-MVP (simplifies auth stack).
-- Users are identified by their Google account email.
+- **Credential-based demo login** — 3 seeded demo users (Juan, María, Carlos). No OAuth required.
+- Google OAuth deferred to post-MVP (simplifies auth stack, no external credentials needed for demo).
+- Users are identified by their email address.
+- Auth uses NextAuth.js CredentialsProvider with JWT sessions.
 
 ---
 

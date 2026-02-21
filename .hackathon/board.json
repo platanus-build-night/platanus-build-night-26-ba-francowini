@@ -16,5 +16,59 @@
     "desc": "Implementation plan for Bilardeando MVP",
     "started": "2026-02-20T21:29:11Z",
     "status": "done"
+  },
+  {
+    "feature": "phase1-setup",
+    "branch": "feat/phase1-setup",
+    "user": "player2",
+    "dir": "/home/player2/worktrees/phase1-setup",
+    "desc": "Phase 1 Setup: Next.js init, theme, deps, directory structure",
+    "started": "2026-02-20T22:39:07Z",
+    "status": "done"
+  },
+  {
+    "feature": "mock-data",
+    "branch": "feat/mock-data",
+    "user": "player2",
+    "dir": "/home/player2/worktrees/mock-data",
+    "desc": "T011-T013: Stats provider interface, mock provider, mock data JSON",
+    "started": "2026-02-20T23:15:11Z",
+    "status": "done"
+  },
+  {
+    "feature": "squad-builder",
+    "branch": "feat/squad-builder",
+    "user": "player1",
+    "dir": "/home/player1/worktrees/squad-builder",
+    "desc": "US2 Squad Builder - player catalog, formation, pitch view, budget",
+    "started": "2026-02-20T23:18:39Z",
+    "status": "active"
+  },
+  {
+    "feature": "phase2-foundation",
+    "branch": "feat/phase2-foundation",
+    "user": "player2",
+    "dir": "/home/player2/worktrees/phase2-foundation",
+    "desc": "Phase 2 foundational: Prisma schema, auth, types, seed, API helpers",
+    "started": "2026-02-20T23:26:46Z",
+    "status": "done"
+  },
+  {
+    "feature": "auth",
+    "branch": "feat/auth",
+    "user": "player2",
+    "dir": "/home/player2/worktrees/auth",
+    "desc": "US1 auth login profile and app shell",
+    "started": "2026-02-21T00:08:26Z",
+    "status": "active"
+  },
+  {
+    "feature": "demo-auth",
+    "branch": "feat/demo-auth",
+    "user": "player2",
+    "dir": "/home/player2/worktrees/demo-auth",
+    "desc": "Remove Google OAuth and add seed users for demo",
+    "started": "2026-02-21T01:14:41Z",
+    "status": "done"
   }
 ]

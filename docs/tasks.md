@@ -35,7 +35,7 @@
 - [x] T001 Initialize Next.js 14 project with TypeScript, Tailwind CSS, and App Router in project root
 - [x] T002 Install and configure shadcn/ui with retro ESPN 2003 theme: dark green (#1a472a), gold (#c5a000), white, dark gray (#333). Thick 2-3px borders, 0-2px border-radius, beveled button styles, alternating table row colors in tailwind.config.ts and src/app/globals.css
 - [x] T003 [P] Install core dependencies: next-auth @auth/prisma-adapter prisma @prisma/client mercadopago lucide-react in package.json
-- [x] T004 [P] Create .env.example with placeholders for DATABASE_URL, NEXTAUTH_SECRET, NEXTAUTH_URL, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, MERCADOPAGO_ACCESS_TOKEN, MERCADOPAGO_PUBLIC_KEY, API_FOOTBALL_KEY, ANTHROPIC_API_KEY in .env.example
+- [x] T004 [P] Create .env.example with placeholders for DATABASE_URL, NEXTAUTH_SECRET, NEXTAUTH_URL, MERCADOPAGO_ACCESS_TOKEN, MERCADOPAGO_PUBLIC_KEY, API_FOOTBALL_KEY, ANTHROPIC_API_KEY in .env.example
 - [x] T005 [P] Create project directory structure: src/services/, src/providers/, src/components/{ui,player,squad,matchday,leaderboard,transfers,leagues,wallet}, src/lib/, src/types/, src/mock-data/, prisma/
 
 ---
@@ -55,7 +55,7 @@
 - [x] T012 [P] Implement mock stats provider with hardcoded Argentine league data in src/providers/mock-stats-provider.ts
 - [x] T013 Create mock data JSON files (28 teams, 889 players from API-Football pipeline, 2 matchdays with 28 match results and 616 player stats) in src/mock-data/matches.json, src/mock-data/stats.json — teams/players read from data/processed/
 - [x] T014 Create database seed script that loads mock data into Prisma (teams, players, matchdays, matches, player stats, demo users with pre-built squads) in prisma/seed.ts
-- [x] T015 [P] Configure NextAuth.js v5 with Prisma adapter and Google OAuth provider (sole auth method for MVP) in src/lib/auth.ts
+- [x] T015 [P] Configure NextAuth.js with CredentialsProvider and JWT sessions (demo login against seeded users) in src/lib/auth.ts
 - [x] T016 [P] Create NextAuth API route handler in src/app/api/auth/[...nextauth]/route.ts
 - [x] T017 [P] Create base API helper utilities (withAuth wrapper, error response builder, request validation) in src/lib/api-helpers.ts
 - [x] T018 [P] Create Mercado Pago payment service interface and mock implementation (createPaymentLink, handleWebhook, getPaymentStatus) in src/services/payment.service.ts
@@ -66,22 +66,22 @@
 
 ## Phase 3: User Story 1 — Auth & User Setup (Priority: P1)
 
-**Goal**: Users can login with Google OAuth, view/edit their profile
+**Goal**: Users can login with demo credentials, view/edit their profile
 
-**Independent Test**: Navigate to /login, sign in with Google, see profile page with user info and $150M starting budget
+**Independent Test**: Navigate to /login, pick a demo user, see profile page with user info and $150M starting budget
 
 ### Implementation for User Story 1
 
 - [x] T019 [P] [US1] Create SessionProvider wrapper component in src/components/providers/session-provider.tsx
 - [x] T020 [US1] Add SessionProvider and retro fonts (Barlow Condensed for headers, DM Sans for body) to root layout in src/app/layout.tsx
 - [x] T021 [P] [US1] Create landing page with hero section, app description, and CTA to login in src/app/page.tsx
-- [x] T022 [P] [US1] Create login page with Google OAuth button (sole auth method for MVP) in src/app/(auth)/login/page.tsx
+- [x] T022 [P] [US1] Create login page with demo user selector (3 seeded users) in src/app/(auth)/login/page.tsx
 - [x] T023 [US1] Create auth middleware to protect /squad, /matchday, /leaderboard, /transfers, /leagues, /wallet, /profile routes in src/middleware.ts
 - [x] T024 [US1] Create app shell layout with top navigation bar (Squad, Matchday, Leaderboard, Transfers, Leagues, Wallet, Profile links) and user menu in src/app/(dashboard)/layout.tsx
 - [x] T025 [P] [US1] Create user profile page showing name, email, virtual budget, real balance, and account creation date in src/app/(dashboard)/profile/page.tsx
 - [x] T026 [US1] Create user profile API route (GET current user, PATCH update name/email) in src/app/api/user/route.ts
 
-**Checkpoint**: User can login with Google, see navigation, view profile with $150M budget
+**Checkpoint**: User can login with demo credentials, see navigation, view profile with $150M budget
 
 ---
 
@@ -405,7 +405,7 @@ With multiple Claude Code instances (via `hack` command):
 - Desktop-first layout — WhatsApp covers mobile experience (MVP.md §8)
 - Mock data: 4 teams, ~80 players, 2 simulated matchdays (MVP.md §10)
 - Player values: $1M–$15M, starting budget $150M — avg $8.3M/player, forces squad-building trade-offs (MVP.md §1)
-- Auth: Google OAuth only for MVP (MVP.md §9) — phone/OTP deferred to post-MVP
+- Auth: Credential-based demo login with 3 seeded users (MVP.md §9) — Google OAuth deferred to post-MVP
 - Platform rake: 5% deducted from league pool before prize distribution (MVP.md §2)
 - Virtual budget purchase: $5M=$1k ARS, $10M=$1.8k ARS, $20M=$3k ARS (MVP.md §3)
 - Visual style: Retro ESPN/Yahoo Sports 2003 — thick borders, beveled buttons, gold/green palette (Constitution I)

@@ -333,7 +333,7 @@ Wave 4:   [Player 1: US8 WhatsApp (T077-T082,T089)------]
 ```bash
 hack auth "US1 auth and login"
 cd ~/worktrees/auth
-# /speckit.implement "Ejecutar Phase 3: US1 Auth tasks T019-T026. Crear SessionProvider, root layout con fonts, landing page, login page con Google OAuth, auth middleware, dashboard layout con top nav, profile page, user API route."
+# /speckit.implement "Ejecutar Phase 3: US1 Auth tasks T019-T026. Crear SessionProvider, root layout con fonts, landing page, login page con demo user selector, auth middleware, dashboard layout con top nav, profile page, user API route."
 ```
 
 **Player 2:**
