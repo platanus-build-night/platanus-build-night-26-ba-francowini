@@ -266,6 +266,7 @@ async function main() {
   const demoUsers = [
     { email: "demo1@bilardeando.com", name: "Juan Demo" },
     { email: "demo2@bilardeando.com", name: "María Demo" },
+    { email: "demo3@bilardeando.com", name: "Carlos Demo" },
   ];
 
   for (const demoUser of demoUsers) {

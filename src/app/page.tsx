@@ -29,7 +29,7 @@ export default function Home() {
             </p>
             <div className="flex gap-3 justify-center">
               <Link href="/login" className="btn-retro-primary text-base px-6 py-3">
-                Ingresar con Google
+                Ingresar
               </Link>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
                 <tr>
                   <td className="font-heading font-bold text-lg text-espn-gold">1</td>
                   <td className="font-bold">Registrate</td>
-                  <td>Ingresá con tu cuenta de Google en un click.</td>
+                  <td>Elegí tu usuario demo y entrá en un click.</td>
                 </tr>
                 <tr>
                   <td className="font-heading font-bold text-lg text-espn-gold">2</td>
