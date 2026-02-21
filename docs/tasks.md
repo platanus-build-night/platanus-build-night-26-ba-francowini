@@ -72,14 +72,14 @@
 
 ### Implementation for User Story 1
 
-- [ ] T019 [P] [US1] Create SessionProvider wrapper component in src/components/providers/session-provider.tsx
-- [ ] T020 [US1] Add SessionProvider and retro fonts (Barlow Condensed for headers, DM Sans for body) to root layout in src/app/layout.tsx
-- [ ] T021 [P] [US1] Create landing page with hero section, app description, and CTA to login in src/app/page.tsx
-- [ ] T022 [P] [US1] Create login page with Google OAuth button (sole auth method for MVP) in src/app/(auth)/login/page.tsx
-- [ ] T023 [US1] Create auth middleware to protect /squad, /matchday, /leaderboard, /transfers, /leagues, /wallet, /profile routes in src/middleware.ts
-- [ ] T024 [US1] Create app shell layout with top navigation bar (Squad, Matchday, Leaderboard, Transfers, Leagues, Wallet, Profile links) and user menu in src/app/(dashboard)/layout.tsx
-- [ ] T025 [P] [US1] Create user profile page showing name, email, virtual budget, real balance, and account creation date in src/app/(dashboard)/profile/page.tsx
-- [ ] T026 [US1] Create user profile API route (GET current user, PATCH update name/email) in src/app/api/user/route.ts
+- [x] T019 [P] [US1] Create SessionProvider wrapper component in src/components/providers/session-provider.tsx
+- [x] T020 [US1] Add SessionProvider and retro fonts (Barlow Condensed for headers, DM Sans for body) to root layout in src/app/layout.tsx
+- [x] T021 [P] [US1] Create landing page with hero section, app description, and CTA to login in src/app/page.tsx
+- [x] T022 [P] [US1] Create login page with Google OAuth button (sole auth method for MVP) in src/app/(auth)/login/page.tsx
+- [x] T023 [US1] Create auth middleware to protect /squad, /matchday, /leaderboard, /transfers, /leagues, /wallet, /profile routes in src/middleware.ts
+- [x] T024 [US1] Create app shell layout with top navigation bar (Squad, Matchday, Leaderboard, Transfers, Leagues, Wallet, Profile links) and user menu in src/app/(dashboard)/layout.tsx
+- [x] T025 [P] [US1] Create user profile page showing name, email, virtual budget, real balance, and account creation date in src/app/(dashboard)/profile/page.tsx
+- [x] T026 [US1] Create user profile API route (GET current user, PATCH update name/email) in src/app/api/user/route.ts
 
 **Checkpoint**: User can login with Google, see navigation, view profile with $150M budget
 
