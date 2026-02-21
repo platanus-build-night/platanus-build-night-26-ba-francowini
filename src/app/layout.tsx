@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "@/components/providers/session-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bilardeando — Fantasy Football Argentina",
-  description: "Fantasy football platform for Argentine Liga Profesional. Build your squad, earn points, compete with friends.",
+  description:
+    "Fantasy football platform for Argentine Liga Profesional. Build your squad, earn points, compete with friends.",
 };
 
 export default function RootLayout({
@@ -13,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="antialiased">
-        {children}
+      <body className="antialiased font-body">
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );
